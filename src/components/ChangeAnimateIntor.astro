@@ -1,0 +1,79 @@
+---
+interface Props {
+    header: string,
+    imageSrc: string
+}
+
+const { header, imageSrc } = Astro.props;
+---
+
+<div class="animated-space">
+    <!-- <Image src={imageSrc} alt="animation" > -->
+    <header>
+        Stawiamy angielski na głowie
+    </header>
+    <svg width="24" height="36" viewBox="0 0 24 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 7.5C11.6022 7.5 11.2206 7.65804 10.9393 7.93934C10.658 8.22064 10.5 8.60218 10.5 9V15C10.5 15.3978 10.658 15.7794 10.9393 16.0607C11.2206 16.342 11.6022 16.5 12 16.5C12.3978 16.5 12.7794 16.342 13.0607 16.0607C13.342 15.7794 13.5 15.3978 13.5 15V9C13.5 8.60218 13.342 8.22064 13.0607 7.93934C12.7794 7.65804 12.3978 7.5 12 7.5Z" fill="#EBECF2"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12C0 8.8174 1.26428 5.76516 3.51472 3.51472C5.76516 1.26428 8.8174 0 12 0C15.1826 0 18.2348 1.26428 20.4853 3.51472C22.7357 5.76516 24 8.8174 24 12V24C24 27.1826 22.7357 30.2348 20.4853 32.4853C18.2348 34.7357 15.1826 36 12 36C8.8174 36 5.76516 34.7357 3.51472 32.4853C1.26428 30.2348 0 27.1826 0 24V12ZM21 12V24C21 26.3869 20.0518 28.6761 18.364 30.364C16.6761 32.0518 14.3869 33 12 33C9.61305 33 7.32387 32.0518 5.63604 30.364C3.94821 28.6761 3 26.3869 3 24V12C3 9.61305 3.94821 7.32387 5.63604 5.63604C7.32387 3.94821 9.61305 3 12 3C14.3869 3 16.6761 3.94821 18.364 5.63604C20.0518 7.32387 21 9.61305 21 12Z" fill="#EBECF2"/>
+      </svg>
+    <p class="p-s">Przewiń w dół</p>
+</div>
+
+<script>
+
+function animate() {
+    var animateObject = document.querySelector(".animated-space");
+    animateObject?.classList.add("scrolled")
+    console.log("zmiana klasy!");
+    window.removeEventListener("scroll", animate)
+}
+
+const listener = window.addEventListener("scroll", animate)
+</script>
+
+<style define:vars={{imageSrc}}>
+.animated-space {
+    border-radius: 0px;
+    width: 100dvw;
+    height: 100dvh;
+    padding: 0;
+    margin: 0;
+    transition: 2s all ease;
+    background: linear-gradient(0deg, var(--Fade-black, rgba(24, 24, 24, 0.53)) 0%, var(--Fade-black, rgba(24, 24, 24, 0.53)) 100%), var(--imageSrc) lightgray 50% / cover no-repeat;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 0 0;
+    align-self: center;
+}
+
+.animated-space.scrolled {
+    align-self: normal;
+    border-radius: 3rem;
+    height: 80dvh;
+    width: 80dvw;
+    overflow: hidden;
+    padding: 3.75rem 3.75rem;
+    
+}
+
+p, span {
+    color: var(--white1);
+}
+
+header {
+    color: var(--white1);
+    text-align: center; 
+    width: fit-content;
+    height: fit-content;
+
+    /* Font styles/hero */
+    font-family: Manrope;
+    font-size: 4.76875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 5.7225rem */
+}
+
+</style>

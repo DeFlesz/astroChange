@@ -1,0 +1,126 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+    title: string,
+    subheading: string,
+    desc: string
+    imageSrc: ImageMetadata,
+}
+
+const { title, subheading, desc, imageSrc } = Astro.props;
+
+---
+<a class="card" href="#">
+    <Image src={imageSrc} alt="placeholder"/>
+    <div class="content">
+        <div>
+            <div class="tile-subheading">
+                <p class="p-s">{subheading}</p>
+            </div>
+            
+            <div class="desc">
+                <h3 class="tile-header">{title}</h3>
+                <p>
+                    {desc}
+                </p>
+            </div>
+        </div>
+
+        <div class="nav">
+            <div class="btn-highlight">
+                <span class="material-symbols-outlined">
+                    arrow_forward
+                </span>
+            </div>
+        </div>
+    </div>
+</a>
+<style>
+a {
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.btn-highlight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 3.375rem;
+    height: 3.375rem;
+    border-radius: 100%;
+    background-color: var(--white1);
+}
+
+a:hover .btn-highlight {
+    background-color: var(--primary);
+}
+
+span.material-symbols-outlined {
+    align-self: center;
+    color: var(--white3);
+}
+
+a:hover span.material-symbols-outlined {
+    color: var(--white1);
+}
+
+img {
+    padding: 0;
+    margin: 0;
+    height: 17.375rem;
+
+}
+
+.card {
+    display: flex;
+    width: 26.125rem;
+    min-width: 19.875rem;
+    max-width: 26.125rem;
+    min-height: 20.625rem;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    border-radius: 3rem;
+    background-color: var(--white3);
+}
+
+.content {
+    display: flex;
+    height: 19.125rem;
+    min-width: 18.75rem;
+    max-width: 52.75rem;
+    min-height: 15.3125rem;
+    max-height: 35.3125rem;
+    padding: 1rem 2rem 2rem 2rem;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex: 1 0 0;
+}
+
+.group-subheading {
+    display: flex;
+    padding: 0.3125rem 0rem;
+    align-items: flex-start;
+    gap: 0.625rem;
+}
+
+.desc {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    align-self: stretch;
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 0.625rem;
+    align-self: stretch;
+}
+</style>

@@ -1,0 +1,96 @@
+---
+interface Props {
+    icon: string,
+    title: string,
+    subheading: string,
+    additional?: string
+}
+
+const { icon, title, subheading, additional} = Astro.props
+---
+<div class="main">
+    <div class="icon-container">
+        <span class="material-symbols-outlined">
+            {icon}
+        </span>
+    </div>
+    <div class="content">
+        <p class="title">
+            {title}
+        </p>
+        <div class="subheading">
+            <p class="p-s">{subheading}</p>
+            <p class="p-xs">{additional}</p>
+        </div>
+    </div>
+</div>
+
+<style>
+span {
+    font-size: 2.5rem;
+    color: var(--primary);
+}
+
+.main {
+    background-color: var(--white3);
+    display: flex;
+    width: 19.6875rem;
+    min-width: 12.9375rem;
+    max-width: 19.875rem;
+    padding: 2rem 2rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.5rem;
+
+    border-radius: 1.5rem;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    display: flex;
+    height: 3.3125rem;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.title {
+    color: var(--black);
+}
+
+.subheading {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.31rem;
+}
+
+/* mobilka */
+@media only screen and (max-width: 40rem) {
+  .main {
+    flex-direction: row;
+    display: flex;
+    width: 19.6875rem;
+    padding: 1.5rem 1.5rem;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .content {
+    display: flex;
+    height: 3.3125rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex: 1 0 0;
+  }
+
+  span {
+    font-size: 1.875rem;
+  }
+}
+</style>

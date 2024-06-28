@@ -1,0 +1,40 @@
+---
+interface Props {
+    icon: string,
+    title: string,
+}
+
+const { icon, title } = Astro.props
+---
+
+<div class="main">
+    <div class="icon-container">
+        <span class="material-symbols-outlined">
+            {icon}
+        </span>
+    </div>
+    <p class="title">{title}</p>
+</div>
+
+<style>
+
+span {
+    color: var(--primary);
+    font-size: 2.5rem;
+}
+
+.main {
+    display: inline-flex;
+    min-width: 12.9375rem;
+    max-width: 19.875rem;
+    padding: 2rem 2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    border-radius: 1.5rem;
+    background: var(--white3);
+
+    box-shadow: 5px 5px 10px 0px rgba(255, 255, 255, 0.50) inset, 52px 12px 39.7px 0px rgba(0, 0, 0, 0.10);
+}
+</style>

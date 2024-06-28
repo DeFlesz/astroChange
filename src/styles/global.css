@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+:root {
+    --primary: #39A2F1;
+    --primary-dark: #3271B8;
+    --secondary: #EF8F45;
+    --white1: #EBECF2;
+    --white2: #F2F4FA;
+    --white3: #FAFBFF;
+    --black: #1A1816;
+
+    --text-primary: #535E6B;
+    --text-secondary: #ADBBCC;
+
+    --padding-horizontal: 3.75rem;
+    --section-spacing: 3.75rem;
+}
+
+.mobile-display {
+    display: none;
+}
+
+.desktop-display {
+    display: block;
+}
+
+@media only screen and (max-width: 40rem) {
+    :root {
+        --padding-horizontal: 1rem;
+        --section-spacing: 3.125rem;
+    }
+
+    .mobile-display {
+        display: block;
+    }
+    
+    .desktop-display {
+        display: none;
+    }
+}
+
+/* typography from figma */
+* {
+    color: var(--text-primary);
+}
+
+/* body {
+    width: 100dvw;
+    height: 100dvh;
+} */
+
+style {
+    /* display: none; */
+}
+
+h2 {
+    /* Font styles/h2 */
+    font-family: Manrope;
+    font-size: 3.05188rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 3.66225rem */
+}
+
+
+h3 {
+    /* Font styles/h3 */
+    margin: 0;
+    padding: 0;
+    font-family: Manrope;
+    font-size: 2.44125rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 2.9295rem */
+}
+
+h4 {
+    /* Font styles/h4 */
+    font-family: Manrope;
+    font-size: 1.95313rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 2.34375rem */
+}
+
+h5 {
+    color: var(--text-primary);
+
+    /* Font styles/h5 */
+    font-family: Manrope;
+    font-size: 1.3675rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 1.641rem */
+}
+
+p {
+    /* Font styles/p */
+    font-family: Manrope;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 1.4rem */
+}
+
+.p-s {
+    /* Font styles/p-s */
+    font-family: Manrope;
+    font-size: 0.7rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 0.98rem */
+}
+
+.p-xs {
+    /* Font styles/p-xs */
+    font-family: Manrope;
+    font-size: 0.56rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 0.784rem */
+}
+
+.p-button {
+    /* Font styles/p_button */
+    font-family: Manrope;
+    font-size: 0.8rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.016rem;
+}
+
+/* Classes */
+.btn {
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Manrope;
+    color: var(--white1);
+    font-size: 0.8rem;
+    padding: 0rem 1rem;
+    background-color: var(--primary);
+    border-radius: 62.5rem;
+    border: none;
+    height: 2.5rem;
+
+    /* Font styles/Desktop_button */
+    font-family: Manrope;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.016rem;
+}
+
+.icon-btn {
+    gap: 0.5rem;
+    justify-content: space-between;
+}
+
+.icon-btn > span.material-symbols-outlined {
+    /* fill: white; */
+    margin: 0;
+    padding: 0;
+    color: var(--white1);
+    font-size: 1rem;   
+}
+
+.icon > span.material-symbols-outlined {
+    /* fill: white; */
+    margin: 0;
+    padding: 0;
+    color: var(--white1);
+    font-size: 1.5rem;   
+}
+
+
+.out.icon > span.material-symbols-outlined {
+    color: var(--text-primary);
+}
+
+.btn-ul.icon-btn > span.material-symbols-outlined {
+    color: var(--primary);
+}
+
+.btn-ul.icon-btn:hover > span.material-symbols-outlined {
+    color: var(--primary-dark);
+}
+
+.out.icon-btn > span.material-symbols-outlined {
+    color: var(--text-primary);
+}
+
+.round {
+    border-radius: 100%;
+}
+
+.icon {
+    padding: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.btn.social {
+    background-color: transparent;
+    border: 2px solid var(--text-primary);
+}
+
+.icon.social > span.material-symbols-outlined {
+    color: var(--text-primary);
+}
+
+.icon.social:hover {
+    background-color: var(--primary);
+    border: none;
+}
+
+.icon.social:hover > span.material-symbols-outlined {
+    color: var(--white1);
+}
+
+.icon.nav {
+    background-color: var(--white3);
+}
+
+.icon.nav > span.material-symbols-outlined {
+    color: var(--text-primary);
+}
+
+.icon.nav.big {
+    background-color: var(--white1);
+}
+
+.icon.nav.big > span.material-symbols-outlined {
+    color: var(--white3);
+}
+
+.icon.nav.alt {
+    background-color: transparent;
+}
+
+.icon.nav:hover {
+    background-color: var(--primary);
+}
+
+.icon.nav:hover > span.material-symbols-outlined {
+    color: var(--white3);
+}
+
+.icon.nav.alt:hover {
+    background-color: var(--white3);
+}
+
+.icon.nav.alt:hover > span.material-symbols-outlined {
+    color: var(--text-primary);
+}
+
+.nav.big {
+    padding: 0;
+    width: 3.375rem;
+    height: 3.375rem;
+}
+
+.btn:hover {
+    background-color: var(--primary-dark);
+    /* border-color: var(--primary-dark); */
+}
+
+.btn.out {
+    color: var(--text-primary);
+    background-color: transparent;
+    border: 2px solid var(--primary);
+
+}
+
+.btn.out:hover {
+    background-color: var(--primary);
+}
+
+.btn.ele {
+    box-shadow: 4px 4px 10px 4px rgba(57, 162, 241, 0.25);
+}
+
+.btn-ul {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Manrope;
+    color: var(--primary);
+    background-color: transparent;
+    font-size: 0.8rem;
+    padding: 0rem 1rem;
+    border: none;
+    height: 2.5rem;
+
+}
+
+.btn-ul:hover {
+    color: var(--primary-dark);
+    border-bottom: 2px solid var(--primary-dark);
+}

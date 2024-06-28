@@ -1,0 +1,239 @@
+---
+import ChangeModuleTile from "../components/ChangeModuleTile.astro";
+import ChangeNav from "../components/ChangeNav.astro";
+import Layout from "../layouts/Layout.astro";
+import imageBrainyKids from "../images/brainyKids.png";
+import imageTeensKids from "../images/brainyTeens.jpg";
+import imageExamsKids from "../images/brainyExams.jpg";
+
+const imageSrc = "url(/animation-placeholder.jpg)"
+---
+
+<Layout title="Home">
+    <ChangeNav/>
+
+    <div class="scroll-animated-header-container">
+    <div class="scroll-animated-header">
+        <!-- <Image src={imageSrc} alt="animation" > -->
+        <div class="filler"></div>
+        <header>
+            Stawiamy angielski na głowie
+        </header>
+        <div class="icon-holder">
+        <svg class="desktop-display" width="24" height="36" viewBox="0 0 24 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 7.5C11.6022 7.5 11.2206 7.65804 10.9393 7.93934C10.658 8.22064 10.5 8.60218 10.5 9V15C10.5 15.3978 10.658 15.7794 10.9393 16.0607C11.2206 16.342 11.6022 16.5 12 16.5C12.3978 16.5 12.7794 16.342 13.0607 16.0607C13.342 15.7794 13.5 15.3978 13.5 15V9C13.5 8.60218 13.342 8.22064 13.0607 7.93934C12.7794 7.65804 12.3978 7.5 12 7.5Z" fill="#EBECF2"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12C0 8.8174 1.26428 5.76516 3.51472 3.51472C5.76516 1.26428 8.8174 0 12 0C15.1826 0 18.2348 1.26428 20.4853 3.51472C22.7357 5.76516 24 8.8174 24 12V24C24 27.1826 22.7357 30.2348 20.4853 32.4853C18.2348 34.7357 15.1826 36 12 36C8.8174 36 5.76516 34.7357 3.51472 32.4853C1.26428 30.2348 0 27.1826 0 24V12ZM21 12V24C21 26.3869 20.0518 28.6761 18.364 30.364C16.6761 32.0518 14.3869 33 12 33C9.61305 33 7.32387 32.0518 5.63604 30.364C3.94821 28.6761 3 26.3869 3 24V12C3 9.61305 3.94821 7.32387 5.63604 5.63604C7.32387 3.94821 9.61305 3 12 3C14.3869 3 16.6761 3.94821 18.364 5.63604C20.0518 7.32387 21 9.61305 21 12Z" fill="#EBECF2"/>
+          </svg>
+          <svg class="mobile-display" width="30" height="28" viewBox="0 0 30 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.5615 3.64032C5.40029 4.23514 5.28515 4.83615 5.21606 5.44334C5.14698 6.05054 5.11243 6.66297 5.11243 7.28063C5.11243 8.77959 5.31969 10.2252 5.73421 11.6176C6.14874 13.01 6.74749 14.3243 7.53047 15.5606C7.71471 15.8223 7.79531 16.1078 7.77228 16.4171C7.74925 16.7264 7.63411 16.9881 7.42684 17.2023C7.21958 17.4164 6.97778 17.5116 6.70143 17.4878C6.42508 17.464 6.1948 17.3212 6.01056 17.0595C5.04335 15.6319 4.30642 14.0854 3.79978 12.4199C3.29314 10.7544 3.03982 9.04131 3.03982 7.28063C3.03982 6.63822 3.07437 5.99581 3.14346 5.35341C3.21254 4.711 3.31617 4.06859 3.45435 3.42618L1.76172 5.17496C1.55446 5.3891 1.31265 5.49616 1.0363 5.49616C0.759956 5.49616 0.518152 5.3891 0.310891 5.17496C0.10363 4.96082 0 4.711 0 4.42548C0 4.13997 0.10363 3.89014 0.310891 3.67601L3.45435 0.428273C3.73069 0.142758 4.0531 0 4.42156 0C4.79003 0 5.11243 0.142758 5.38878 0.428273L8.53224 3.67601C8.7395 3.89014 8.84313 4.13997 8.84313 4.42548C8.84313 4.711 8.7395 4.96082 8.53224 5.17496C8.32498 5.3891 8.08317 5.49045 7.80682 5.47903C7.53047 5.46761 7.28867 5.36625 7.08141 5.17496L5.5615 3.64032ZM20.9333 27.7306C20.4037 27.921 19.8685 28.0105 19.3278 27.999C18.787 27.9876 18.2629 27.8506 17.7553 27.5879L9.94852 23.8405C9.60308 23.674 9.36128 23.4065 9.22311 23.0382C9.08493 22.6699 9.09645 22.3068 9.25765 21.949L9.32674 21.8062C9.55702 21.3303 9.87943 20.944 10.294 20.647C10.7085 20.3501 11.1691 20.1773 11.6757 20.1288L14.0246 19.9504L10.1558 8.99372C10.0176 8.61304 10.0291 8.24996 10.1903 7.90448C10.3515 7.55901 10.6164 7.31537 10.9848 7.17356C11.3533 7.03176 11.7042 7.04365 12.0377 7.20925C12.3712 7.37485 12.6074 7.64847 12.7465 8.03011L16.0627 17.4164L17.3754 16.9168L15.9591 12.8839C15.8209 12.5032 15.8324 12.1401 15.9936 11.7946C16.1548 11.4492 16.4197 11.2055 16.7881 11.0637C17.1566 10.9219 17.5075 10.9338 17.841 11.0994C18.1745 11.265 18.4107 11.5386 18.5498 11.9203L19.9661 15.9532L21.2442 15.4535L20.3116 12.7768C20.1734 12.3961 20.1849 12.0335 20.3461 11.689C20.5073 11.3445 20.7721 11.1003 21.1406 10.9566C21.5091 10.8129 21.86 10.8248 22.1935 10.9923C22.5269 11.1598 22.7632 11.4334 22.9023 11.8132L23.835 14.4899L25.1476 13.9902C25.0095 13.6095 25.021 13.2469 25.1822 12.9024C25.3434 12.5579 25.6082 12.3138 25.9767 12.1701C26.3451 12.0264 26.6961 12.0383 27.0296 12.2058C27.363 12.3733 27.5993 12.6469 27.7384 13.0266L29.6383 18.38C30.168 19.879 30.1159 21.3365 29.4822 22.7527C28.8484 24.1688 27.8066 25.1501 26.3567 25.6964L20.9333 27.7306Z" fill="#FAFBFF"/>
+          </svg>
+        <p class="p-s">Przewiń w dół</p>
+        </div>
+    </div>
+    </div>
+
+    <div class="intro">
+        <h2 class="desktop-display">Witaj w Change - akademii rozwoju umiejętności językowych i społecznych.</h2>
+        <h3 class="mobile-display">Witaj w Change - akademii rozwoju umiejętności językowych i społecznych.</h3>
+        <div class="intro-container">
+            <p>
+                Tutaj słuchacze czują się wyjątkowi ucząc się angielskiego w domowej atmosferze, łącząc naukę języka z technikami oddychania i uważności. To miejsce, w którym program nauczania dostosowuje się do dziecka, a nie dziecko do programu. Uczymy bez podręczników, skupiając się na praktycznych umiejętnościach i naturalnym rozwoju. Spotykamy się raz w tygodniu, co pozwala na harmonijny rozwój bez przeciążania. Założona 20 lat temu z myślą o naszych własnych dzieciach, akademia nieustannie rozwija swoją wizję, aby zapewnić indywidualne podejście do każdego ucznia i wspierać jego językowy oraz społeczny rozwój. Tutaj towarzyszymy w nauce i dmuchamy w skrzydła.
+            </p>
+            <div class="intro-buttons">
+                <a class="btn icon-btn">
+                    Button
+                <span class="material-symbols-outlined">
+                    arrow_forward
+                </span>
+                </a>
+                <a class="btn out icon-btn">
+                    Button
+                <span class="material-symbols-outlined">
+                    arrow_forward
+                </span>
+                </a> 
+            </div>
+        </div>
+    </div>
+
+    <div class="cards">
+
+    </div>
+
+    <div class="modules">
+        <ChangeModuleTile imageSrc={imageBrainyKids} title="Brainy Kids" subheading="KLASY II-III SP" desc="Raj dla najmłodszych. Tutaj uczymy się podstaw angielskiego jednocześnie inspirując się codziennymi zachwytami."></ChangeModuleTile>
+        <ChangeModuleTile imageSrc={imageTeensKids} title="Brainy Kids" subheading="KLASY II-III SP" desc="Kto powiedział, że zabawy nie można łączyć z ciężką nauką? A tak właśnie uczymy się najskuteczniej."></ChangeModuleTile>
+        <ChangeModuleTile imageSrc={imageExamsKids} title="Brainy Kids" subheading="KLASY II-III SP" desc="Dla lubiących wyzwania. Poziom umiejętności nie gra roli – liczy się zawziętość i wytrwałość."></ChangeModuleTile>
+    </div>
+
+</Layout>
+<!-- <script src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js" defer></script> -->
+
+<!-- <script>
+    import 'https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js';
+    
+    document.querySelector("scroll-animated-header")?.animate(
+    {
+	    marginTop: ['0', '100dvh'],
+	    height: ['100dvh', '80dvh'],
+	    width: ['100dvw', '80dvw'],
+    },
+    {
+    	fill: "both",
+    	timeline: new ScrollTimeline({
+    		source: document.documentElement,
+    	}),
+    	rangeStart: new CSSUnitValue(0, 'dvh'),
+    	rangeEnd: new CSSUnitValue(200, 'dvh'),
+    }
+    )
+</script> -->
+
+<style define:vars={{imageSrc}}>
+
+body {
+    margin: 0;
+    padding: 0;
+    /* width: 100dvw; */
+    /* overflow-x: hidden; */
+}
+
+@keyframes scroll-more-animation {
+	from {
+        position: relative;
+        top: 3.75rem;
+        border-radius: 0;
+        width: 100%;
+        height: 50%;
+	}
+	to {
+        position: relative;
+        top: calc(100dvh + 7.75rem);
+        /* margin-top: 100dvh; */
+        /* transform: translateY(100dvh); */
+        /* margin: 5dvh;
+        margin-left: var(--padding-horizontal);
+        margin-right: var(--padding-horizontal); */
+        border-radius: 3.725rem;
+        width: calc(100% - 2*var(--padding-horizontal));
+        height: calc(50% - 3*(3.75rem));
+	}
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding-horizontal);
+    gap: var(--section-spacing);
+    /* height: 100dvh; */
+    padding-bottom: 3.75rem;
+}
+
+.intro h2, .intro h3 {
+    color: var(--primary);
+    max-width: 54.6875rem;
+    align-self: start;
+}
+
+.intro-container {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    max-width: 54.6875rem;
+    align-self: end;
+    gap: var(--section-spacing);
+    }
+    
+    @media only screen and (max-width: 40rem) {
+        .intro-container {
+            align-self: center;
+            max-width: 100dvw;
+        }
+        .intro h2, .intro h3 {
+            max-width: 100dvw;
+        }        
+
+        .intro-buttons {
+            justify-content: space-between;
+        }
+}
+
+.intro-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.icon-holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scroll-animated-header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 200dvh;
+    width: 100dvw;
+}
+
+.scroll-animated-header {
+    /* position: fixed; */
+    /* position: sticky; */
+    position: absolute;
+    display: flex;
+    animation: scroll-more-animation 2s linear forwards;
+	animation-timeline: scroll();
+	animation-range: 0dvh 100dvh;
+
+    /* /* border-radius: 0px; */
+    width: 100dvw;
+    /* height: 100dvh; */
+    background: linear-gradient(0deg, var(--Fade-black, rgba(24, 24, 24, 0.53)) 0%, var(--Fade-black, rgba(24, 24, 24, 0.53)) 100%), var(--imageSrc) lightgray 50% / cover no-repeat;    
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.scroll-animated-header p {
+    color: var(--white1);
+}
+
+header {
+    color: var(--white1);
+    text-align: center; 
+    width: fit-content;
+    height: fit-content;
+    /* padding: 3.75rem; */
+    margin: 3.125rem;
+
+    /* Font styles/hero */
+    font-family: Manrope;
+    font-size: 4.76875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 5.7225rem */
+}
+@media only screen and (max-width: 40rem) {
+    header {
+        /* Font styles/hero */
+        font-family: Manrope;
+        font-size: 2.5rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%; /* 3rem */
+    }
+}
+
+.modules {
+    padding: var(--padding-horizontal);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+</style>
