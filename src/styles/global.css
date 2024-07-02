@@ -21,11 +21,11 @@
 }
 
 .mobile-display {
-    display: none;
+    display: none !important;
 }
 
 .desktop-display {
-    display: block;
+    display: block !important;
 }
 
 @media only screen and (max-width: 40rem) {
@@ -35,11 +35,11 @@
     }
 
     .mobile-display {
-        display: block;
+        display: block !important;
     }
     
     .desktop-display {
-        display: none;
+        display: none !important;
     }
 }
 

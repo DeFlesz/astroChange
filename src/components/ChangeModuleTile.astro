@@ -4,11 +4,10 @@ import { Image } from "astro:assets";
 interface Props {
     title: string,
     subheading: string,
-    desc: string
     imageSrc: ImageMetadata,
 }
 
-const { title, subheading, desc, imageSrc } = Astro.props;
+const { title, subheading, imageSrc } = Astro.props;
 
 ---
 <a class="card" href="#">
@@ -22,7 +21,7 @@ const { title, subheading, desc, imageSrc } = Astro.props;
             <div class="desc">
                 <h3 class="tile-header">{title}</h3>
                 <p>
-                    {desc}
+                    <slot/>
                 </p>
             </div>
         </div>
@@ -70,14 +69,17 @@ img {
     padding: 0;
     margin: 0;
     height: 17.375rem;
-
+    width: 100%;
+    object-fit: cover;
 }
 
 .card {
     display: flex;
-    width: 26.125rem;
+    /* width: 26.125rem; */
+    width: 30%;
+    flex-grow: 1;
     min-width: 19.875rem;
-    max-width: 26.125rem;
+    max-width: 30rem;
     min-height: 20.625rem;
     justify-content: center;
     align-items: center;

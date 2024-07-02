@@ -1,3 +1,8 @@
+---
+import ChangeCard from "./ChangeCard.astro";
+import creativityImage from "../images/creativity.png";
+---
+
 <!-- TODO
     DO IT WITH INTERSECTION OBSERVER
     BASICALLY HAVE THEM LOOKING NORMALLY
@@ -8,7 +13,9 @@
 
 <div class="swiper cardsSwiper">
     <div class="swiper-wrapper">
-        <div class="swiper-slide">Slide 1</div>
+        <ChangeCard imageSrc={creativityImage} title="Kreatywność" subheading="creativity [ˌkriːeɪˈtɪvɪti]">
+            Kreatywność jest kluczową kompetencją XXI wieku i stanowi podstawę naszego podejścia do nauczania. Lektorzy tworzą spersonalizowane scenariusze łącząc naukę języka z kreatywnymi zadaniami, jak planowanie miasta, pobudzając kreatywność uczniów. Są mentorami, uczącymi języka, inspirującymi do osiągania celów i eksplorowania nowych obszarów wiedzy.
+        </ChangeCard>
         <div class="swiper-slide">Slide 2</div>
         <div class="swiper-slide">Slide 3</div>
         <div class="swiper-slide">Slide 4</div>
@@ -18,7 +25,7 @@
         <div class="swiper-slide">Slide 8</div>
         <div class="swiper-slide">Slide 9</div>
     </div>
-    <div class="swiper-pagination"></div>
+    <!-- <div class="swiper-pagination"></div> -->
 </div>
 
 <script>
@@ -40,11 +47,14 @@ import 'swiper/css';
   var swiper = new Swiper(".cardsSwiper", {
     direction: 'horizontal',
 //   slidesPerView: 1,
-    mousewheel: true,
+    // mousewheel: true,
+    freeMode: true,
     allowSlidePrev: true,
     allowSlideNext: true,
     spaceBetween: 30,
-
+    mousewheel: {
+    releaseOnEdges: true,
+  },
     breakpoints: {
         640: {
             slidesPerView: 2,
@@ -56,8 +66,8 @@ import 'swiper/css';
 
 <style>
     .swiper {
-        width: 100dvw;
-        height: 100dvh;
+        width: 100%;
+        height: 80dvh;
     }
 
     .swiper-pagination {
@@ -65,7 +75,8 @@ import 'swiper/css';
     }
 
     .swiper-slide {
-        height: fit-content;
+        height: 100%;
+        /* height: fit-content; */
         text-align: center;
         font-size: 18px;
         background: var(--white3);

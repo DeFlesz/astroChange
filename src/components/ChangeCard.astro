@@ -1,0 +1,22 @@
+---
+import Image from 'astro/components/Image.astro'
+
+interface Props {
+    imageSrc: ImageMetadata,
+    title: string,
+    subheading: string,
+}
+
+const { imageSrc, title, subheading } = Astro.props;
+---
+
+<div class="swiper-slide card">
+    <Image src={imageSrc} alt={title} />
+    <p>{title}</p>
+    <p>{subheading}</p>
+    <slot/>
+</div>
+
+<style>
+
+</style>
