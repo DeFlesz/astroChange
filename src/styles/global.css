@@ -304,3 +304,8 @@ p {
     color: var(--primary-dark);
     border-bottom: 2px solid var(--primary-dark);
 }
+
+.fourklock {
+	max-width: 1920px;
+    margin: auto;
+}

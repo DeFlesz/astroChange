@@ -7,18 +7,18 @@ import imageExamsKids from "../images/brainyExams.jpg";
 
 ---
 <Layout title="Modules">
-    <div class="intro-container">
-
-        <h2 class="desktop-display">Witaj w Change - akademii rozwoju umiejętności językowych i społecznych.</h2>
-        <h3 class="mobile-display">Witaj w Change - akademii rozwoju umiejętności językowych i społecznych.</h3>
-        <div class="intro-container">
-            <p>
-                Tutaj słuchacze czują się wyjątkowi ucząc się angielskiego w domowej atmosferze, łącząc naukę języka z technikami oddychania i uważności. To miejsce, w którym program nauczania dostosowuje się do dziecka, a nie dziecko do programu. Uczymy bez podręczników, skupiając się na praktycznych umiejętnościach i naturalnym rozwoju. Spotykamy się raz w tygodniu, co pozwala na harmonijny rozwój bez przeciążania. Założona 20 lat temu z myślą o naszych własnych dzieciach, akademia nieustannie rozwija swoją wizję, aby zapewnić indywidualne podejście do każdego ucznia i wspierać jego językowy oraz społeczny rozwój. Tutaj towarzyszymy w nauce i dmuchamy w skrzydła.
-            </p>
-        </div>
+    <div class="intro fourklock">
+            
+            <h2 class="desktop-display">Witaj w Change - akademii rozwoju umiejętności językowych i społecznych.</h2>
+            <h3 class="mobile-display">Witaj w Change - akademii rozwoju umiejętności językowych i społecznych.</h3>
+            <div class="intro-container">
+                <p>
+                    Tutaj słuchacze czują się wyjątkowi ucząc się angielskiego w domowej atmosferze, łącząc naukę języka z technikami oddychania i uważności. To miejsce, w którym program nauczania dostosowuje się do dziecka, a nie dziecko do programu. Uczymy bez podręczników, skupiając się na praktycznych umiejętnościach i naturalnym rozwoju. Spotykamy się raz w tygodniu, co pozwala na harmonijny rozwój bez przeciążania. Założona 20 lat temu z myślą o naszych własnych dzieciach, akademia nieustannie rozwija swoją wizję, aby zapewnić indywidualne podejście do każdego ucznia i wspierać jego językowy oraz społeczny rozwój. Tutaj towarzyszymy w nauce i dmuchamy w skrzydła.
+                </p>
+            </div>
     </div>
-
-    <div class="modules">
+        
+    <div class="modules fourklock">
         <ChangeModuleTile imageSrc={imageBrainyKids} title="Brainy Kids" subheading="KLASY II-III SP">
             Raj dla najmłodszych. Tutaj uczymy się podstaw angielskiego jednocześnie inspirując się codziennymi zachwytami.
         </ChangeModuleTile>
@@ -29,16 +29,22 @@ import imageExamsKids from "../images/brainyExams.jpg";
             Dla lubiących wyzwania. Poziom umiejętności nie gra roli – liczy się zawziętość i wytrwałość
         </ChangeModuleTile>
     </div>
+
+    <div class="parents-corner">
+        <h2 class="parent-header">
+
+        </h2>
+    </div>
 </Layout>
 
 <style>
 .intro {
-    width: 100%;
+    padding: var(--padding-horizontal);
+    padding-top: calc(2*3.75rem);
     display: flex;
     flex-direction: column;
     padding: var(--padding-horizontal);
     gap: var(--section-spacing);
-    /* height: 100dvh; */
     padding-bottom: 3.75rem;
 }
 

@@ -16,7 +16,7 @@ const imageSrc = "url(/animation-placeholder.jpg)"
 ---
 
 <Layout title="Home">
-    <div class="scroll-animated-header-container">
+    <div class="scroll-animated-header-container    ">
         <div class="scroll-animated-header">
             <Image src={imageAnimation} alt="animation" class="animated-image" />
             <div class="filler"></div>
@@ -36,7 +36,7 @@ const imageSrc = "url(/animation-placeholder.jpg)"
     </div>
     </div>
 
-    <div class="intro">
+    <div class="intro fourklock">
         <h2 class="desktop-display">Witaj w Change - akademii rozwoju umiejętności językowych i społecznych.</h2>
         <h3 class="mobile-display">Witaj w Change - akademii rozwoju umiejętności językowych i społecznych.</h3>
         <div class="intro-container">
@@ -60,7 +60,7 @@ const imageSrc = "url(/animation-placeholder.jpg)"
         </div>
     </div>
 
-    <div class="cards">
+    <div class="cards fourklock">
         <div class="cards-desc">
             <h4>Wartości którymi się kierujemy:</h4>
             <a class="btn icon-btn">
@@ -79,7 +79,7 @@ const imageSrc = "url(/animation-placeholder.jpg)"
         </a>
     </div>
 
-    <div class="modules">
+    <div class="modules fourklock">
         <ChangeModuleTile imageSrc={imageBrainyKids} title="Brainy Kids" subheading="KLASY II-III SP">
             Raj dla najmłodszych. Tutaj uczymy się podstaw angielskiego jednocześnie inspirując się codziennymi zachwytami.
         </ChangeModuleTile>
@@ -91,7 +91,7 @@ const imageSrc = "url(/animation-placeholder.jpg)"
         </ChangeModuleTile>
     </div>
 
-    <div class="testimonials">
+    <div class="testimonials fourklock">
         <ChangeTestimonials>
             <ChangeTestimonialItem name="Paweł" period="uczeń w latach 2010-2014">
                 Do Change uczęszczałem w klasie maturalnej. W tym czasie przerobiłem praktycznie 12 lat nauki języka angielskiego i przygotowałem się do matury na poziomie rozszerzonym. Poznałem nowoczesne metody nauczania, zdobyłem wiedzę, powtórzyłem materiał. Zmieniłem podejście do języka angielskiego. Tak więc, jeżeli chodzi o »zmiany« to gorąco polecam Change.
@@ -218,6 +218,7 @@ body {
 
 @keyframes scroll-more-animation {
 	from {
+        margin-top: 0;
         color: transparent;
         /* position: absolute; */
         border-radius: 0;
@@ -228,7 +229,6 @@ body {
 	}
 	to {
         color: transparent;
-        margin: 0;
         margin-top: calc(3.75rem*2);
 
         /* top: calc(100dvh + 7.75rem); */
@@ -282,6 +282,7 @@ body {
     display: flex;
     animation: scroll-more-animation 1s linear forwards;
     animation-delay: 0.5s;
+    margin-top: 0;
     margin: auto;
     /* /* border-radius: 0px; */
     width: 100dvw;
