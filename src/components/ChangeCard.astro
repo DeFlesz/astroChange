@@ -12,11 +12,30 @@ const { imageSrc, title, subheading } = Astro.props;
 
 <div class="swiper-slide card">
     <Image src={imageSrc} alt={title} />
-    <p>{title}</p>
-    <p>{subheading}</p>
-    <slot/>
+    <div class="text">
+        <p>{title}</p>
+        <p>{subheading}</p>
+        <slot/>
+    </div>
 </div>
 
 <style>
+.card {
+    /* margin: 2rem; */
+    background: var(--white3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1.5rem;
+}
 
+.text {
+    margin-right: 2rem;
+}
+
+img {
+    height: 80%;
+    width: max-content;
+    margin: 2rem;
+}
 </style>

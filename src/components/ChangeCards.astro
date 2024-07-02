@@ -1,6 +1,11 @@
 ---
 import ChangeCard from "./ChangeCard.astro";
 import creativityImage from "../images/creativity.png";
+import relationsImage from "../images/relations.png";
+import curiosityImage from "../images/curiosity.png";
+import experienceImage from "../images/experience.png";
+import customizationImage from "../images/customization.png";
+import empathyImage from "../images/empathy.png";
 ---
 
 <!-- TODO
@@ -16,14 +21,21 @@ import creativityImage from "../images/creativity.png";
         <ChangeCard imageSrc={creativityImage} title="Kreatywność" subheading="creativity [ˌkriːeɪˈtɪvɪti]">
             Kreatywność jest kluczową kompetencją XXI wieku i stanowi podstawę naszego podejścia do nauczania. Lektorzy tworzą spersonalizowane scenariusze łącząc naukę języka z kreatywnymi zadaniami, jak planowanie miasta, pobudzając kreatywność uczniów. Są mentorami, uczącymi języka, inspirującymi do osiągania celów i eksplorowania nowych obszarów wiedzy.
         </ChangeCard>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>
-        <div class="swiper-slide">Slide 4</div>
-        <div class="swiper-slide">Slide 5</div>
-        <div class="swiper-slide">Slide 6</div>
-        <div class="swiper-slide">Slide 7</div>
-        <div class="swiper-slide">Slide 8</div>
-        <div class="swiper-slide">Slide 9</div>
+        <ChangeCard imageSrc={relationsImage} title="Relacje" subheading="relations [ˌkriːeɪˈtɪvɪti]">
+            Kreatywność jest kluczową kompetencją XXI wieku i stanowi podstawę naszego podejścia do nauczania. Lektorzy tworzą spersonalizowane scenariusze łącząc naukę języka z kreatywnymi zadaniami, jak planowanie miasta, pobudzając kreatywność uczniów. Są mentorami, uczącymi języka, inspirującymi do osiągania celów i eksplorowania nowych obszarów wiedzy.
+        </ChangeCard>
+        <ChangeCard imageSrc={curiosityImage} title="Ciekawość" subheading="creativity [ˌkriːeɪˈtɪvɪti]">
+            Kreatywność jest kluczową kompetencją XXI wieku i stanowi podstawę naszego podejścia do nauczania. Lektorzy tworzą spersonalizowane scenariusze łącząc naukę języka z kreatywnymi zadaniami, jak planowanie miasta, pobudzając kreatywność uczniów. Są mentorami, uczącymi języka, inspirującymi do osiągania celów i eksplorowania nowych obszarów wiedzy.
+        </ChangeCard>
+        <ChangeCard imageSrc={experienceImage} title="Doświadczenie" subheading="creativity [ˌkriːeɪˈtɪvɪti]">
+            Kreatywność jest kluczową kompetencją XXI wieku i stanowi podstawę naszego podejścia do nauczania. Lektorzy tworzą spersonalizowane scenariusze łącząc naukę języka z kreatywnymi zadaniami, jak planowanie miasta, pobudzając kreatywność uczniów. Są mentorami, uczącymi języka, inspirującymi do osiągania celów i eksplorowania nowych obszarów wiedzy.
+        </ChangeCard>
+        <ChangeCard imageSrc={customizationImage} title="Personalizacja" subheading="creativity [ˌkriːeɪˈtɪvɪti]">
+            Kreatywność jest kluczową kompetencją XXI wieku i stanowi podstawę naszego podejścia do nauczania. Lektorzy tworzą spersonalizowane scenariusze łącząc naukę języka z kreatywnymi zadaniami, jak planowanie miasta, pobudzając kreatywność uczniów. Są mentorami, uczącymi języka, inspirującymi do osiągania celów i eksplorowania nowych obszarów wiedzy.
+        </ChangeCard>
+        <ChangeCard imageSrc={empathyImage} title="Empatia" subheading="creativity [ˌkriːeɪˈtɪvɪti]">
+            Kreatywność jest kluczową kompetencją XXI wieku i stanowi podstawę naszego podejścia do nauczania. Lektorzy tworzą spersonalizowane scenariusze łącząc naukę języka z kreatywnymi zadaniami, jak planowanie miasta, pobudzając kreatywność uczniów. Są mentorami, uczącymi języka, inspirującymi do osiągania celów i eksplorowania nowych obszarów wiedzy.
+        </ChangeCard>
     </div>
     <!-- <div class="swiper-pagination"></div> -->
 </div>
@@ -79,11 +91,6 @@ import 'swiper/css';
         /* height: fit-content; */
         text-align: center;
         font-size: 18px;
-        background: var(--white3);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 1.5rem;
     }
 
     .swiper-slide img {
@@ -91,5 +98,9 @@ import 'swiper/css';
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+
+    .swiper-slide.swiper-slide-next {
+        width: 50%;
     }
 </style>
