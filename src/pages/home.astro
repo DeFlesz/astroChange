@@ -5,17 +5,21 @@ import Layout from "../layouts/Layout.astro";
 import imageBrainyKids from "../images/brainyKids.png";
 import imageTeensKids from "../images/brainyTeens.jpg";
 import imageExamsKids from "../images/brainyExams.jpg";
+import ChangeTestimonials from "../components/ChangeTestimonials.astro";
+import ChangeCards from "../components/ChangeCards.astro";
+import imageAnimation from "../images/animation-placeholder.jpg";
+import { Image } from "astro:assets";
+import ChangeTestimonialItem from "../components/ChangeTestimonialItem.astro";
+
 
 const imageSrc = "url(/animation-placeholder.jpg)"
 ---
 
 <Layout title="Home">
-    <ChangeNav/>
-
     <div class="scroll-animated-header-container">
-    <div class="scroll-animated-header">
-        <!-- <Image src={imageSrc} alt="animation" > -->
-        <div class="filler"></div>
+        <div class="scroll-animated-header">
+            <Image src={imageAnimation} alt="animation" class="animated-image" />
+            <div class="filler"></div>
         <header>
             Stawiamy angielski na głowie
         </header>
@@ -56,14 +60,46 @@ const imageSrc = "url(/animation-placeholder.jpg)"
         </div>
     </div>
 
-    <div class="cards">
-
-    </div>
+    <ChangeCards/>
 
     <div class="modules">
         <ChangeModuleTile imageSrc={imageBrainyKids} title="Brainy Kids" subheading="KLASY II-III SP" desc="Raj dla najmłodszych. Tutaj uczymy się podstaw angielskiego jednocześnie inspirując się codziennymi zachwytami."></ChangeModuleTile>
         <ChangeModuleTile imageSrc={imageTeensKids} title="Brainy Kids" subheading="KLASY II-III SP" desc="Kto powiedział, że zabawy nie można łączyć z ciężką nauką? A tak właśnie uczymy się najskuteczniej."></ChangeModuleTile>
         <ChangeModuleTile imageSrc={imageExamsKids} title="Brainy Kids" subheading="KLASY II-III SP" desc="Dla lubiących wyzwania. Poziom umiejętności nie gra roli – liczy się zawziętość i wytrwałość."></ChangeModuleTile>
+    </div>
+
+    <div class="testimonials">
+        <ChangeTestimonials>
+            <ChangeTestimonialItem name="Paweł" period="uczeń w latach 2010-2014">
+                Do Change uczęszczałem w klasie maturalnej. W tym czasie przerobiłem praktycznie 12 lat nauki języka angielskiego i przygotowałem się do matury na poziomie rozszerzonym. Poznałem nowoczesne metody nauczania, zdobyłem wiedzę, powtórzyłem materiał. Zmieniłem podejście do języka angielskiego. Tak więc, jeżeli chodzi o »zmiany« to gorąco polecam Change.
+            </ChangeTestimonialItem>
+            <ChangeTestimonialItem name="Paweł" period="uczeń w latach 2010-2014">
+                Do Change uczęszczałem w klasie maturalnej. W tym czasie przerobiłem praktycznie 12 lat nauki języka angielskiego i przygotowałem się do matury na poziomie rozszerzonym. Poznałem nowoczesne metody nauczania,            
+            </ChangeTestimonialItem>
+            <ChangeTestimonialItem name="Paweł" period="uczeń w latach 2010-2014">
+                Do Change uczęszczałem w klasie maturalnej. W tym czasie przerobiłem praktycznie 12 lat nauki języka angielskiego i przygotowałem się do matury na poziomie rozszerzonym. Poznałem nowoczesne metody nauczania, zdobyłem wiedzę, powtórzyłem materiał.            
+            </ChangeTestimonialItem>
+
+            <ChangeTestimonialItem name="Paweł" period="uczeń w latach 2010-2014">
+                Do Change uczęszczałem w klasie maturalnej. W tym czasie przerobiłem praktycznie 12 lat nauki języka angielskiego i przygotowałem się do matury na poziomie rozszerzonym. Poznałem nowoczesne metody nauczania, zdobyłem wiedzę, powtórzyłem materiał. Zmieniłem podejście do języka angielskiego. Tak więc, jeżeli chodzi o »zmiany« to gorąco polecam Change.
+            </ChangeTestimonialItem>
+            <ChangeTestimonialItem name="Paweł" period="uczeń w latach 2010-2014">
+                Do Change uczęszczałem w klasie maturalnej. W tym czasie przerobiłem praktycznie 12 lat nauki języka angielskiego i przygotowałem się do matury na poziomie rozszerzonym. Poznałem nowoczesne metody nauczania,            
+            </ChangeTestimonialItem>
+            <ChangeTestimonialItem name="Paweł" period="uczeń w latach 2010-2014">
+                Do Change uczęszczałem w klasie maturalnej. W tym czasie przerobiłem praktycznie 12 lat nauki języka angielskiego i przygotowałem się do matury na poziomie rozszerzonym. Poznałem nowoczesne metody nauczania, zdobyłem wiedzę, powtórzyłem materiał.            
+            </ChangeTestimonialItem>
+
+            <ChangeTestimonialItem name="Paweł" period="uczeń w latach 2010-2014">
+                Do Change uczęszczałem w klasie maturalnej. W tym czasie przerobiłem praktycznie 12 lat nauki języka angielskiego i przygotowałem się do matury na poziomie rozszerzonym. Poznałem nowoczesne metody nauczania, zdobyłem wiedzę, powtórzyłem materiał. Zmieniłem podejście do języka angielskiego. Tak więc, jeżeli chodzi o »zmiany« to gorąco polecam Change.
+            </ChangeTestimonialItem>
+            <ChangeTestimonialItem name="Paweł" period="uczeń w latach 2010-2014">
+                Do Change uczęszczałem w klasie maturalnej. W tym czasie przerobiłem praktycznie 12 lat nauki języka angielskiego i przygotowałem się do matury na poziomie rozszerzonym. Poznałem nowoczesne metody nauczania,            
+            </ChangeTestimonialItem>
+            <ChangeTestimonialItem name="Paweł" period="uczeń w latach 2010-2014">
+                Do Change uczęszczałem w klasie maturalnej. W tym czasie przerobiłem praktycznie 12 lat nauki języka angielskiego i przygotowałem się do matury na poziomie rozszerzonym. Poznałem nowoczesne metody nauczania, zdobyłem wiedzę, powtórzyłem materiał.            
+            </ChangeTestimonialItem>
+        </ChangeTestimonials>
     </div>
 
 </Layout>
@@ -94,30 +130,9 @@ const imageSrc = "url(/animation-placeholder.jpg)"
 body {
     margin: 0;
     padding: 0;
+    background-color: var(--white1);
     /* width: 100dvw; */
     /* overflow-x: hidden; */
-}
-
-@keyframes scroll-more-animation {
-	from {
-        position: relative;
-        top: 3.75rem;
-        border-radius: 0;
-        width: 100%;
-        height: 50%;
-	}
-	to {
-        position: relative;
-        top: calc(100dvh + 7.75rem);
-        /* margin-top: 100dvh; */
-        /* transform: translateY(100dvh); */
-        /* margin: 5dvh;
-        margin-left: var(--padding-horizontal);
-        margin-right: var(--padding-horizontal); */
-        border-radius: 3.725rem;
-        width: calc(100% - 2*var(--padding-horizontal));
-        height: calc(50% - 3*(3.75rem));
-	}
 }
 
 .intro {
@@ -174,34 +189,106 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 200dvh;
+    height: 100dvh;
     width: 100dvw;
+}
+
+@keyframes scroll-more-animation {
+	from {
+        color: transparent;
+        /* position: absolute; */
+        border-radius: 0;
+        width: 100dvw;
+        height: 100dvh;
+
+        /* background-image: url(--imageSrc); */
+	}
+	to {
+        color: transparent;
+
+        margin-top: calc(3.75rem*2);
+
+        /* top: calc(100dvh + 7.75rem); */
+        /* margin-top: 100dvh; */
+        /* transform: translateY(100dvh); */
+        /* margin: 5dvh;
+        margin-left: var(--padding-horizontal);
+        margin-right: var(--padding-horizontal); */
+        border-radius: 3.725rem;
+        width: calc(100dvw - 2*var(--padding-horizontal));
+        height: calc(100dvh - 3*(3.75rem));
+	}
+}
+
+@keyframes animate-photo {
+    from {
+        width: 100dvw;
+        height: 100dvh;
+    }
+    to {
+        width: calc(100dvw - 2*var(--padding-horizontal));
+        height: calc(100dvh - 3*(3.75rem));
+        border-radius: 3.725rem;
+        filter: brightness(50%);
+    }
+}
+
+.animated-image {
+    /* position:fixed; */
+    position: absolute;
+    z-index: -10;
+    animation: animate-photo 1s ease forwards;
+    animation-delay: 0.5s;
+    /* width: pare; */
+    width: 100dvw;
+        height: 100dvh;
+    
+    object-fit: cover;
 }
 
 .scroll-animated-header {
     /* position: fixed; */
     /* position: sticky; */
-    position: absolute;
+    /* position: relative; */
+    overflow: hidden;
+
+    
+    border-radius: 0;
+        width: 100dvw;
+        height: 100dvh;
     display: flex;
-    animation: scroll-more-animation 2s linear forwards;
-	animation-timeline: scroll();
-	animation-range: 0dvh 100dvh;
+    animation: scroll-more-animation 1s linear forwards;
+    animation-delay: 0.5s;
 
     /* /* border-radius: 0px; */
     width: 100dvw;
     /* height: 100dvh; */
-    background: linear-gradient(0deg, var(--Fade-black, rgba(24, 24, 24, 0.53)) 0%, var(--Fade-black, rgba(24, 24, 24, 0.53)) 100%), var(--imageSrc) lightgray 50% / cover no-repeat;    
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
 }
 
-.scroll-animated-header p {
-    color: var(--white1);
+@keyframes scroll-more-animation-text {
+	from {
+        color: transparent;
+        fill: transparent;
+        transform: translateY(3.75rem);
+	}
+	to {
+        color: var(--white1);
+        fill: var(--white1);
+        transform: translateY(0);
+	}
+}
+
+.scroll-animated-header p, header, svg.desktop-holder, path {
+    animation: scroll-more-animation-text 1s ease forwards;
+    animation-delay: 1s;
+    color: transparent;
+    fill: transparent;
 }
 
 header {
-    color: var(--white1);
     text-align: center; 
     width: fit-content;
     height: fit-content;
@@ -224,6 +311,12 @@ header {
         font-weight: 500;
         line-height: 120%; /* 3rem */
     }
+}
+
+.testimonials {
+    padding: var(--padding-horizontal);
+    align-items: center;
+    display: flex;
 }
 
 .modules {

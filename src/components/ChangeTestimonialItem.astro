@@ -1,0 +1,77 @@
+---
+interface Props {
+    name: string,
+    period: string,
+}
+
+const {name, period} = Astro.props;
+---
+
+<div class="swiper-slide testimonial">
+    <div class="testimonial-header-container">
+        <div class="testimonial-name-container">
+            <svg class="quote-symbol" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.0001 2H4.00006C2.90006 2 2.00006 2.9 2.00006 4V16C2.00006 17.1 2.90006 18 4.00006 18H8.00006V21C8.00006 21.6 8.40006 22 9.00006 22H9.50006C9.70006 22 10.0001 21.9 10.2001 21.7L13.9001 18H20.0001C21.1001 18 22.0001 17.1 22.0001 16V4C22.0001 2.9 21.1001 2 20.0001 2ZM11.0001 13H7.00006V8.8L8.30006 6H10.3001L8.90006 9H11.0001V13ZM17.0001 13H13.0001V8.8L14.3001 6H16.3001L14.9001 9H17.0001V13Z" fill="#EF8F45"/>
+            </svg>
+            <p class="name">{name}</p>
+        </div>
+        <div class="testimonial-period">
+            <p class="period">{period}</p>
+        </div>
+    </div>
+    <p class="testimonial-content">
+        <slot/>
+    </p>
+</div>
+
+<style>
+.name {
+    color: var(--secondary);
+}
+
+.period {
+    color: var(--text-secondary);
+}
+
+.testimonial {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: var(--white3);
+    border-radius: 1.5rem;
+    height: fit-content;
+}
+
+.testimonial-header-container {
+    margin-top: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    display: flex;
+    align-items: center;
+    align-content: flex-start;
+    gap: 0rem var(--Numbers-Separators-separator-m, 1rem);
+    /* align-self: stretch; */
+    flex-wrap: wrap;
+}
+
+.testimonial-content {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.testimonial-name-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    gap: 0.5rem;
+}
+
+
+</style>

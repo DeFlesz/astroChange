@@ -14,6 +14,10 @@
 
     --padding-horizontal: 3.75rem;
     --section-spacing: 3.75rem;
+    --swiper-theme-color: var(--primary);
+    --swiper-pagination-color: var(--primary);
+    --swiper-pagination-bullet-inactive-color: var(--text-primary);
+
 }
 
 .mobile-display {
