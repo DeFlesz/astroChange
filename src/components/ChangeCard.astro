@@ -13,9 +13,9 @@ const { imageSrc, title, subheading } = Astro.props;
 <div class="swiper-slide card">
     <Image src={imageSrc} alt={title} />
     <div class="text">
-        <p>{title}</p>
+        <h3>{title}</h3>
         <p>{subheading}</p>
-        <slot/>
+        <p class="content"><slot/></p>
     </div>
 </div>
 
@@ -27,15 +27,49 @@ const { imageSrc, title, subheading } = Astro.props;
     justify-content: center;
     align-items: center;
     border-radius: 1.5rem;
+    width: 90%;
+    align-self: center;
+    transition: all 0.5s;
+    opacity: 0.6;
 }
+
 
 .text {
     margin-right: 2rem;
+}
+
+h3 {
+    color: var(--primary);
+    margin: 0;
+}
+
+p {
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.content {
+    color: var(--text-primary);
+    margin-top: 1rem;
 }
 
 img {
     height: 80%;
     width: max-content;
     margin: 2rem;
+}
+
+.card.swiper-slide-active {
+    width: 100%;
+    opacity: 1;
+}
+
+@media only screen and (max-width: 40rem) {
+    .card {
+        flex-direction: column;
+    }
+    .text {
+        margin: 1.5rem;
+    }
 }
 </style>

@@ -1,8 +1,30 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Image from 'astro/components/Image.astro'
 
+import aboutHeaderPhoto from "../images/aboutHeaderPhoto.jpg";
 
 ---
 <Layout title="About">
-    
+    <div class="header-container">
+        <h1 class="header">
+            Nasze zajęcia są efektem przemyśleń, poszukiwań i eksperymentów. 
+        </h1>
+        <Image class="header-photo" src={aboutHeaderPhoto} alt="Pani Agnieszka" />
+    </div>
 </Layout>
+
+<style>
+.header-container {
+    padding: var(--padding-horizontal);
+}
+
+.header-photo {
+    width: 100%;
+    height: 50dvh;
+    object-fit: cover;
+    object-position: 80% 20%;
+    border-radius: 3rem;
+}
+</style>
+

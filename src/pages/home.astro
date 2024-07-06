@@ -149,15 +149,6 @@ const imageSrc = "url(/animation-placeholder.jpg)"
 </script> -->
 
 <style define:vars={{imageSrc}}>
-
-body {
-    margin: 0;
-    padding: 0;
-    background-color: var(--white1);
-    /* width: 100dvw; */
-    /* overflow-x: hidden; */
-}
-
 .intro {
     display: flex;
     flex-direction: column;
@@ -351,12 +342,14 @@ header {
 }
 
 .modules {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     padding: var(--padding-horizontal);
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
     gap: 2rem;
 }
 
@@ -379,6 +372,12 @@ header {
     display: none;
 }
 
+@media only screen and (max-width: 1200px) {
+    .modules {
+        grid-template-columns: 1fr;
+
+    }
+}
 @media only screen and (max-width: 40rem) {
     .cards {
         flex-direction: column;

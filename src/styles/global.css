@@ -57,6 +57,14 @@ style {
     /* display: none; */
 }
 
+h1 {
+    font-family: Manrope;
+    font-size: var(--Numbers-Fonts-h1, 3.815rem);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 4.578rem */
+}
+
 h2 {
     /* Font styles/h2 */
     font-family: Manrope;
