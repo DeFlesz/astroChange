@@ -1,17 +1,18 @@
 ---
 interface Props {
-    icon: string,
+    // icon: string,
     title: string,
 }
 
-const { icon, title } = Astro.props
+const { title } = Astro.props
 ---
 
 <div class="main">
     <div class="icon-container">
-        <span class="material-symbols-outlined">
+        <slot/>
+        <!-- <span class="material-symbols-outlined">
             {icon}
-        </span>
+        </span> -->
     </div>
     <p class="title">{title}</p>
 </div>
@@ -25,8 +26,6 @@ span {
 
 .main {
     display: inline-flex;
-    min-width: 12.9375rem;
-    max-width: 19.875rem;
     padding: 2rem 2rem;
     justify-content: center;
     align-items: center;
@@ -36,5 +35,11 @@ span {
     background: var(--white3);
 
     box-shadow: 5px 5px 10px 0px rgba(255, 255, 255, 0.50) inset, 52px 12px 39.7px 0px rgba(0, 0, 0, 0.10);
+}
+
+@media only screen and (max-width: 40rem) {
+    .main {
+        padding: 1rem 1rem;
+    }
 }
 </style>

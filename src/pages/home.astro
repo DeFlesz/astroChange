@@ -73,7 +73,7 @@ const imageSrc = "url(/animation-placeholder.jpg)"
         </div>
         <ChangeCards/>
         <a class="btn icon-btn">
-            Poznaj nas
+            Poznaj nasze zajęcia
         <span class="material-symbols-outlined">
             arrow_forward
         </span>
@@ -170,6 +170,12 @@ const imageSrc = "url(/animation-placeholder.jpg)"
     }
     
     @media only screen and (max-width: 40rem) {
+        .btn {
+            font-size: 0.7rem;
+            padding: 0rem 1rem;
+            gap: 0.5rem;
+        }
+
         .intro-container {
             align-self: center;
             max-width: 100dvw;
@@ -359,6 +365,9 @@ header {
 
 .cards > a {
     display: none;
+    margin-top: 1.875rem;
+    align-items: center;
+    justify-content: center;
 }
 
 @media only screen and (max-width: 1200px) {
