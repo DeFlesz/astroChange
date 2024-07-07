@@ -4,5 +4,41 @@ import Layout from "../layouts/Layout.astro";
 
 ---
 <Layout title="FAQ">
-    
+    <div class="faq-container fourklock">
+        <div class="desc">
+            <h1 class="header primary desktop-display">
+                Pytania, które
+                często słyszymy. 
+            </h1>
+            <h3 class="header primary mobile-display">
+                Pytania, które
+                często słyszymy.
+            </h3>
+            <p>
+                W Change słuchamy – rodziców, dzieci i młodzieży oraz samych siebie. Znaleźliśmy odpowiedzi na często zadawane przez Was pytania i umieściliśmy je w tej sekcji.            </p>
+            <p>
+                Nie znalazłeś/aś nurtującego Cię pytania?
+            </p>
+            <a class="btn out icon-btn">
+                Skontaktuj się z nami
+            <span class="material-symbols-outlined">
+                phone
+            </span>
+            </a> 
+        </div>
+    </div>
 </Layout>
+
+<style>
+.faq-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: var(--padding-horizontal);
+}
+
+@media only screen and (max-width: 40rem) {
+    .faq-container {
+        grid-template-columns: 1fr;
+    }
+}
+</style>

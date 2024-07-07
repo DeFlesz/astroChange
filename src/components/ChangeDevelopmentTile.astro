@@ -4,11 +4,13 @@ interface Props {
     desc: string,
     buttonText: string,
     buttonLink: string,
+    buttonIcon: string,
     aboutText?: string,
-    aboutLink?: string
+    aboutLink?: string,
+    aboutIcon?: string,
 }
 
-const { title, desc, buttonText, buttonLink, aboutText, aboutLink } = Astro.props;
+const { title, desc, buttonText, buttonLink, buttonIcon, aboutText, aboutLink, aboutIcon } = Astro.props;
 ---
 
 <div class="main">
@@ -17,15 +19,24 @@ const { title, desc, buttonText, buttonLink, aboutText, aboutLink } = Astro.prop
         <p class="desc">{desc}</p>
     </div>
     <div class="buttons">
-        <a href={buttonLink} class="btn">{buttonText}</a>
-        {aboutLink && <a href={aboutLink} class="btn">{aboutText}</a>}
+        <a href={buttonLink} class="btn icon-btn">
+            {buttonText} 
+            <span class="material-symbols-outlined">
+                {buttonIcon}
+            </span>
+        </a>
+        {aboutLink && <a href={aboutLink} class="btn icon-btn">
+            {aboutText}
+            <span class="material-symbols-outlined">
+                {aboutIcon}
+            </span>    
+        </a>}
     </div>
 </div>
 
 <style>
 .main {
     display: flex;
-    width: 35.4375rem;
     padding: 2rem 2rem;
     flex-direction: column;
     align-items: flex-start;
