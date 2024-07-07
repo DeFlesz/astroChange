@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
+import { fade } from 'astro:transitions';
 import ChangeFooter from "../components/ChangeFooter.astro";
 import ChangeNav from "../components/ChangeNav.astro";
 import "../styles/global.css"
@@ -20,12 +22,13 @@ const { title } = Astro.props;
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<!-- <ViewTransitions /> -->
 	</head>
 	<body>
-		<div class="page-container">
+		<div class="page-container" transition:animate={fade({ duration: '0.4s' })}>
 			<ChangeNav/>
 			
-			<slot />
+			<slot/>
 			
 			<ChangeFooter/>
 		</div>

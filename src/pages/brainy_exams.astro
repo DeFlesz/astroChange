@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Image from "astro/components/Image.astro"
+import brainyTeensHeaderSource from "../images/brainyTeensHeader.jpg"
+import ChangeBilboard from "../components/ChangeBilboard.astro"
+import ChangeParentsCorner from "../components/ChangeParentsCorner.astro"
+
+---
+<Layout title="Brainy Exams">
+<div class="header-container fourklock">
+    <h1 class="header primary desktop-display">
+        Nasze zajęcia są efektem przemyśleń, poszukiwań i eksperymentów. 
+    </h1>
+    <h3 class="header primary mobile-display">
+        Nasze zajęcia są efektem przemyśleń, poszukiwań i eksperymentów. 
+    </h3>
+    <Image class="header-photo" src={brainyTeensHeaderSource} alt="Pani Agnieszka" />
+</div>
+
+<div class="bilboard-container fourklock">
+    <ChangeBilboard/>
+</div>
+
+<div class="parents-corner fourklock">
+    <ChangeParentsCorner />
+</div>
+
+</Layout>
+
+<style>
+
+</style>

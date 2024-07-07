@@ -5,12 +5,13 @@ interface Props {
     title: string,
     subheading: string,
     imageSrc: ImageMetadata,
+    href: string,
 }
 
-const { title, subheading, imageSrc } = Astro.props;
+const { title, subheading, imageSrc, href } = Astro.props;
 
 ---
-<a class="card" href="#">
+<a class="card" href={href}>
     <Image src={imageSrc} alt="placeholder"/>
     <div class="content">
         <div>
@@ -19,7 +20,7 @@ const { title, subheading, imageSrc } = Astro.props;
             </div>
             
             <div class="desc">
-                <h3 class="tile-header">{title}</h3>
+                <h3 class="tile-header primary">{title}</h3>
                 <p>
                     <slot/>
                 </p>
@@ -49,7 +50,8 @@ a {
     width: 3.375rem;
     height: 3.375rem;
     border-radius: 100%;
-    background-color: var(--white1);
+    background-color: var(--white3);
+    border: 2px var(--primary) solid;
 }
 
 a:hover .btn-highlight {
@@ -58,7 +60,7 @@ a:hover .btn-highlight {
 
 span.material-symbols-outlined {
     align-self: center;
-    color: var(--white3);
+    color: var(--text-primary);
 }
 
 a:hover span.material-symbols-outlined {

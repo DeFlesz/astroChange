@@ -61,17 +61,25 @@ import 'swiper/css';
     direction: 'horizontal',
 //   slidesPerView: 1,
     // mousewheel: true,
-    freeMode: true,
+    // freeMode: true,
     allowSlidePrev: true,
     allowSlideNext: true,
     spaceBetween: 30,
-    mousewheel: {
-    // releaseOnEdges: true,
-    },
+    // mousewheel: {
+    // // releaseOnEdges: true,
+    //     enabled:true,
+    //     releaseOnEdges: true,
+    // },
     breakpoints: {
         640: {
             slidesPerView: 2,
-            direction: "vertical"
+            direction: "vertical",
+            mousewheel: {
+            // releaseOnEdges: true,
+                enabled:true,
+                releaseOnEdges: true,
+            },
+            freeMode: true,
         }
     },
     });

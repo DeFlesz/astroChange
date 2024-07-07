@@ -1,0 +1,38 @@
+---
+import ChangeModuleTile from "../components/ChangeModuleTile.astro";
+
+import imageBrainyKids from "../images/brainyKids.png";
+import imageTeensKids from "../images/brainyTeens.jpg";
+import imageExamsKids from "../images/brainyExams.jpg";
+---
+
+<div class="modules">
+    <ChangeModuleTile imageSrc={imageBrainyKids} title="Brainy Kids" subheading="KLASY II-III SP" href="brainy_kids">
+        Raj dla najmłodszych. Tutaj uczymy się podstaw angielskiego jednocześnie inspirując się codziennymi zachwytami.
+    </ChangeModuleTile>
+    <ChangeModuleTile imageSrc={imageTeensKids} title="Brainy Teens" subheading="KLASY IV-VII SP" href="brainy_teens">
+        Kto powiedział, że zabawy nie można łączyć z ciężką nauką? A tak właśnie uczymy się najskuteczniej.
+    </ChangeModuleTile>
+    <ChangeModuleTile imageSrc={imageExamsKids} title="Brainy Exams" subheading="VIII klasa SP, liceum, technikum" href="brainy_exams">
+        Dla lubiących wyzwania. Poziom umiejętności nie gra roli – liczy się zawziętość i wytrwałość
+    </ChangeModuleTile>
+</div>
+
+<style>
+.modules {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; */
+    gap: 2rem;
+}
+
+@media only screen and (max-width: 1200px) {
+    .modules {
+        grid-template-columns: 1fr;
+
+    }
+}
+</style>

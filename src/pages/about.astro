@@ -1,22 +1,65 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Image from 'astro/components/Image.astro'
+import ChangeBilboard from "../components/ChangeBilboard.astro"
 
 import aboutHeaderPhoto from "../images/aboutHeaderPhoto.jpg";
+import stuffPhoto from "../images/aboutStuffPhoto.jpg"
 
 ---
 <Layout title="About">
-    <div class="header-container">
-        <h1 class="header">
+    <div class="header-container fourklock">
+        <h1 class="header primary desktop-display">
             Nasze zajęcia są efektem przemyśleń, poszukiwań i eksperymentów. 
         </h1>
+        <h3 class="header primary mobile-display">
+            Nasze zajęcia są efektem przemyśleń, poszukiwań i eksperymentów. 
+        </h3>
         <Image class="header-photo" src={aboutHeaderPhoto} alt="Pani Agnieszka" />
+    </div>
+
+    <div class="stuff fourklock">
+        <h3 class="stuff-header primary">
+            Znaczna część pomysłów jest autorska, przygotowana przez lektorów specjalnie i jedynie dla naszych uczniów.
+        </h3>
+        <div class="stuff-container">
+            <Image class="stuff-photo" src={stuffPhoto} alt="zdjęcie przedstawiające skład zespołu" />
+            <div class="stuff-inner-container">
+                <p>
+                    Mamy doświadczenie w zintegrowanym nauczaniu językowo-przedmiotowym (CLIL), które łączy naukę języka z nauką innego przedmiotu (np. przyrody czy sztuki). Często korzystamy również z metody pracy projektowej, dzięki której uczniowie zgłębiają zagadnienia językowe, ale także rozwijają kompetencje miękkie, takie jak planowanie czasu, dynamika działania czy praca w grupie. Przykładamy wagę do tego, aby w czasie zajęć dzieci nie tylko operowały angielskim, ale również sięgały do wyobraźni, były kreatywne, budowały poczucie własnej wartości i tworzyły pozytywne relacje.
+                </p>
+                <div class="stuff-buttons">
+
+                    <a class="btn icon-btn">
+                        Poznaj nasze zajęcia
+                        <span class="material-symbols-outlined">
+                            arrow_forward
+                        </span>
+                    </a>
+                    <a class="btn icon-btn out">
+                        Skontaktuj się z nami
+                        <span class="material-symbols-outlined">
+                            phone
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bilboard-container fourklock">
+        <ChangeBilboard/>
     </div>
 </Layout>
 
 <style>
 .header-container {
+    margin-top: calc(2*3.75rem);
     padding: var(--padding-horizontal);
+}
+
+.header {
+    margin-bottom: 2.5rem;
 }
 
 .header-photo {
@@ -25,6 +68,49 @@ import aboutHeaderPhoto from "../images/aboutHeaderPhoto.jpg";
     object-fit: cover;
     object-position: 80% 20%;
     border-radius: 3rem;
+}
+
+.stuff-photo {
+    border-radius: 1.5rem;
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+    align-self: flex-end;
+}
+
+.stuff {
+    padding: var(--padding-horizontal);
+    /* width: ?; */
+}
+
+.stuff-container {
+    margin-top: 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7.9375rem;
+}
+
+.stuff-buttons {
+    display: flex;
+    margin-top: 2.5rem;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.bilboard-container {
+    padding: var(--padding-horizontal);
+    /* width: 100dvw; */
+}
+
+@media only screen and (max-width: 40rem) {
+    .stuff-container {
+        grid-template-columns: 1fr;
+        gap: 1.875rem;
+    }
+
+    .header {
+        margin-bottom: 1.875rem;
+    }
 }
 </style>
 

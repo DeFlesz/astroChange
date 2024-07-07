@@ -1,5 +1,6 @@
 ---
 import ChangeModuleTile from "../components/ChangeModuleTile.astro";
+import ChangeModules from "../components/ChangeModules.astro";
 import ChangeNav from "../components/ChangeNav.astro";
 import Layout from "../layouts/Layout.astro";
 import imageBrainyKids from "../images/brainyKids.png";
@@ -80,18 +81,13 @@ const imageSrc = "url(/animation-placeholder.jpg)"
     </div>
 
     <div class="modules fourklock">
-        <ChangeModuleTile imageSrc={imageBrainyKids} title="Brainy Kids" subheading="KLASY II-III SP">
-            Raj dla najmłodszych. Tutaj uczymy się podstaw angielskiego jednocześnie inspirując się codziennymi zachwytami.
-        </ChangeModuleTile>
-        <ChangeModuleTile imageSrc={imageTeensKids} title="Brainy Kids" subheading="KLASY II-III SP" >
-            Kto powiedział, że zabawy nie można łączyć z ciężką nauką? A tak właśnie uczymy się najskuteczniej.
-        </ChangeModuleTile>
-        <ChangeModuleTile imageSrc={imageExamsKids} title="Brainy Kids" subheading="KLASY II-III SP" >
-            Dla lubiących wyzwania. Poziom umiejętności nie gra roli – liczy się zawziętość i wytrwałość
-        </ChangeModuleTile>
+        <ChangeModules />
     </div>
 
     <div class="testimonials fourklock">
+        <h2 class="primary">
+            Ciepłe słowa od naszych Przyjaciół
+        </h2>
         <ChangeTestimonials>
             <ChangeTestimonialItem name="Paweł" period="uczeń w latach 2010-2014">
                 Do Change uczęszczałem w klasie maturalnej. W tym czasie przerobiłem praktycznie 12 lat nauki języka angielskiego i przygotowałem się do matury na poziomie rozszerzonym. Poznałem nowoczesne metody nauczania, zdobyłem wiedzę, powtórzyłem materiał. Zmieniłem podejście do języka angielskiego. Tak więc, jeżeli chodzi o »zmiany« to gorąco polecam Change.
@@ -334,23 +330,16 @@ header {
     }
 }
 
+.modules {
+    padding: var(--padding-horizontal);
+}
+
 .testimonials {
     margin: auto;
     padding: var(--padding-horizontal);
     align-items: center;
     display: flex;
-}
-
-.modules {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding: var(--padding-horizontal);
-    /* display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap; */
-    gap: 2rem;
+    flex-wrap: wrap;
 }
 
 .cards {
