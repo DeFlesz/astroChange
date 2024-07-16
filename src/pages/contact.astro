@@ -9,26 +9,55 @@ import Layout from "../layouts/Layout.astro";
             <p>
                 Zaznacz wybrany temat (opcjonalnie).
             </p>
-            <input type="checkbox" id="brainyKids" name="brainyKids" value="Brainy Kids">
-            <label for="brainyKids"> Brainy Kids</label>
-            <input type="checkbox" id="brainyTeens" name="brainyTeens" value="Brainy Teens">
-            <label for="brainyTeens"> Brainy Teens</label>
-            <input type="checkbox" id="brainyExams" name="brainyExams" value="Brainy Exams">
-            <label for="brainyExams"> Brainy Exams</label>
-            <input type="checkbox" id="fris" name="fris" value="FRIS">
-            <label for="fris"> FRIS</label>
-            <input type="checkbox" id="wynajemSal" name="wynajemSal" value="Wynajem sal">
-            <label for="wynajemSal"> Wynajme sal</label>
-            <input type="checkbox" id="other" name="other" value="Chcę porozmawiać o czymś innym">
-            <label for="other"> Chcę porozmawiać o czymś innym</label>
+            <div class="checkboxes">
+            <div class="checkbox-container">
+                <input type="checkbox" id="brainyKids" name="brainyKids" value="Brainy Kids">
+                <label for="brainyKids"> Brainy Kids</label>
+            </div>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="brainyTeens" name="brainyTeens" value="Brainy Teens">
+                <label for="brainyTeens"> Brainy Teens</label>
+            </div>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="brainyExams" name="brainyExams" value="Brainy Exams">
+                <label for="brainyExams"> Brainy Exams</label>
+            </div>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="fris" name="fris" value="FRIS">
+                <label for="fris"> FRIS</label>
+            </div>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="wynajemSal" name="wynajemSal" value="Wynajem sal">
+                <label for="wynajemSal"> Wynajme sal</label>
+            </div>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="other" name="other" value="Chcę porozmawiać o czymś innym">
+                <label for="other"> Chcę porozmawiać o czymś innym</label>
+            </div>
+            </div>
+            
             <p>
                 Wypełnij swoje dane i uzupełnij treść wiadomości lub pozostaw ją pustą.
             </p>
+            <div class="textfields">
+                <input class="textfield" type="text" name="name" id="name" placeholder="Imię i Nazwisko*">
+                <input class="textfield" type="email" name="email" id="email" placeholder="E-mail*">
+                <input class="textfield" type="tel" name="phone" id="phone" placeholder="Numer telefonu">
+                <input class="textfield" type="text" name="message-content" id="message-content" placeholder="Treść wiadomości..." maxlength="500">
+            </div>
+
             <p class="p-button">
                 * – pola obowiązkowe
             </p>
-            <input type="checkbox" id="agreement" name="agreement" value="agreement">
-            <label for="agreement"> Zapoznałem/am się oraz akceptuję regulamin i politykę prywatności i wyrażam zgodę na kontakt.</label> <br>
+            <div class="checkbox-agreement">
+                <input type="checkbox" id="agreement" name="agreement" value="agreement">
+                <label for="agreement"> Zapoznałem/am się oraz akceptuję regulamin i politykę prywatności i wyrażam zgodę na kontakt.</label> <br>
+            </div>
             <a class="btn icon-btn">
                 Poznaj nasze zajęcia
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -75,11 +104,44 @@ i Społecznych Change
 </Layout>
 
 <style>
+.checkboxes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.textfields {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.checkbox-container {
+    padding: 1rem;
+    width: fit-content;
+    color: var(--black);
+    background: var(--white2);
+    /* Font styles/p-s */
+    font-family: Manrope;
+    font-size: var(--Numbers-Fonts-p-s, 0.8rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 1.12rem */
+    border-radius: 62.5rem;
+}
+
+.checkbox-agreement {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
 .form-container {
     margin-top: 4.375rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: var(--padding-horizontal);
+    gap: 7.9375rem;
 }
 
 iframe {
