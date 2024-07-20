@@ -1,0 +1,77 @@
+---
+interface Props {
+    question: string,
+    answer: string,
+    id: string
+}
+
+const { question, answer, id } = Astro.props;
+
+---
+
+<div class="main">
+
+    <div class="question">
+        <div class="header">
+            <p>
+                {question}
+            </p>
+            <span class="material-symbols-outlined">
+                arrow_downward
+            </span>
+        </div>
+    </div>
+    <div class="answer">
+        <p>
+            {answer}
+        </p>
+    </div>
+</div>
+    
+<script>
+const answer = document.querySelector(".answer")
+
+document.querySelector(".question")?.addEventListener("click", () => {
+    answer?.classList.toggle("show")
+})
+</script>
+
+<style>
+.main {
+    transition: all 0.5s linear;
+    padding: var(--box-vertical-padding) var(--box-horizontal-padding);
+}
+
+.question:hover span {
+    background-color: var(--primary);
+    color: var(--white3);
+}
+
+.header {
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1.25rem;
+    align-items: center;
+}
+
+span {
+    font-size: 1.5rem;
+    border: 2px solid var(--primary);
+    border-radius: 100%;
+    padding: 0.375rem;
+}
+
+.answer {
+    display: none;
+}
+
+.answer.show {
+    display: block;
+}
+
+.question input[type="checkbox"]:checked {
+
+}
+</style>

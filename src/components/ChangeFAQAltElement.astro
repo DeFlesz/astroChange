@@ -1,0 +1,88 @@
+---
+interface Props {
+    question: string,
+    answer: string,
+    id: string
+}
+
+const { question, answer } = Astro.props;
+
+---
+
+<faq-element>
+    <div class="main">
+
+        <div class="question">
+            <div class="header">
+                <p>
+                    {question}
+                </p>
+                <span class="material-symbols-outlined">
+                    arrow_downward
+                </span>
+            </div>
+        </div>
+        <div class="answer">
+            <p>
+                {answer}
+            </p>
+        </div>
+    </div>
+</faq-element>
+
+<script>
+    class ChangeFAQElement extends HTMLElement {
+      constructor() {
+        super();
+  
+        // Read the message from the data attribute.
+        const answer = this.querySelector(".answer");
+        const button = this.querySelector('.question');
+        button?.addEventListener('click', () => {
+            answer?.classList.toggle("show")
+            console.log("lolz");
+        });
+      }
+    }
+  
+    customElements.define('faq-element', ChangeFAQElement);
+  </script>
+  <style>
+    .main {
+        transition: all 0.5s linear;
+        padding: var(--box-vertical-padding) var(--box-horizontal-padding);
+    }
+    
+    .question:hover span {
+        background-color: var(--primary);
+        color: var(--white3);
+    }
+    
+    .header {
+        user-select: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1.25rem;
+        align-items: center;
+    }
+    
+    span {
+        font-size: 1.5rem;
+        border: 2px solid var(--primary);
+        border-radius: 100%;
+        padding: 0.375rem;
+    }
+    
+    .answer {
+        display: none;
+    }
+    
+    .answer.show {
+        display: block;
+    }
+    
+    .question input[type="checkbox"]:checked {
+    
+    }
+    </style>

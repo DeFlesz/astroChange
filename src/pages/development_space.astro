@@ -13,10 +13,10 @@ import photoCarouselOne from "../images/photoCarouselOne.jpg";
 ---
 <Layout title="Development space">
     <div class="header-container fourklock">
-        <h1 class="header primary desktop-display">
+        <h1 class="header unset-margins primary desktop-display">
             Nasze zajęcia są efektem przemyśleń, poszukiwań i eksperymentów. 
         </h1>
-        <h3 class="header primary mobile-display">
+        <h3 class="header unset-margins primary mobile-display">
             Nasze zajęcia są efektem przemyśleń, poszukiwań i eksperymentów. 
         </h3>
         <Image class="header-photo" src={developmentSpaceHeaderPhoto} alt="Sala lekcyjna" />
@@ -63,7 +63,7 @@ import photoCarouselOne from "../images/photoCarouselOne.jpg";
 
 <style>
 .header-container {
-    margin-top: calc(2*3.75rem);
+    margin-top: var(--page-padding-top);
     padding: var(--padding-horizontal);
 }
 

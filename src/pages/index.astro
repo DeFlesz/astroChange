@@ -21,7 +21,7 @@ const imageSrc = "url(/animation-placeholder.jpg)"
         <div class="scroll-animated-header">
             <Image src={imageAnimation} alt="animation" class="animated-image" />
             <div class="filler"></div>
-        <header>
+        <header class="unset-margins">
             Stawiamy angielski na głowie
         </header>
         <div class="icon-holder">
@@ -63,7 +63,7 @@ const imageSrc = "url(/animation-placeholder.jpg)"
 
     <div class="cards fourklock">
         <div class="cards-desc">
-            <h4>Wartości którymi się kierujemy:</h4>
+            <h4 class="unset-margins">Wartości którymi się kierujemy:</h4>
             <a class="btn icon-btn">
                 Poznaj nas
             <span class="material-symbols-outlined">
@@ -148,10 +148,9 @@ const imageSrc = "url(/animation-placeholder.jpg)"
 .intro {
     display: flex;
     flex-direction: column;
-    padding: var(--padding-horizontal);
     gap: var(--section-spacing);
     /* height: 100dvh; */
-    padding-bottom: 3.75rem;
+    padding: var(--section-spacing) var(--padding-horizontal);
 }
 
 .intro h2, .intro h3 {
@@ -222,7 +221,7 @@ const imageSrc = "url(/animation-placeholder.jpg)"
 	}
 	to {
         color: transparent;
-        margin-top: calc(3.75rem*2);
+        margin-top: var(--page-padding-top);
 
         /* top: calc(100dvh + 7.75rem); */
         /* margin-top: 100dvh; */
@@ -230,9 +229,9 @@ const imageSrc = "url(/animation-placeholder.jpg)"
         /* margin: 5dvh;
         margin-left: var(--padding-horizontal);
         margin-right: var(--padding-horizontal); */
-        border-radius: 3.725rem;
+        border-radius: var(--corner-l);
         width: calc(100dvw - 2*var(--padding-horizontal));
-        height: calc(100dvh - 3*(3.75rem));
+        height: calc(100dvh - (var(--page-padding-top) + var(--section-spacing)));
 	}
 }
 
@@ -243,8 +242,8 @@ const imageSrc = "url(/animation-placeholder.jpg)"
     }
     to {
         width: calc(100dvw - 2*var(--padding-horizontal));
-        height: calc(100dvh - 3*(3.75rem));
-        border-radius: 3.725rem;
+        height: calc(100dvh - (var(--page-padding-top) + var(--section-spacing)));
+        border-radius: var(--corner-l);
         filter: brightness(50%);
     }
 }
@@ -337,12 +336,12 @@ header {
 }
 
 .modules {
-    padding: var(--padding-horizontal);
+    padding: var(--section-spacing) var(--padding-horizontal);
 }
 
 .testimonials {
     margin: auto;
-    padding: var(--padding-horizontal);
+    padding: var(--section-spacing) var(--padding-horizontal);
     align-items: center;
     display: flex;
     flex-wrap: wrap;
@@ -350,10 +349,11 @@ header {
 
 .cards {
     margin: auto;
-    padding: var(--padding-horizontal);
+    padding: var(--section-spacing) var(--padding-horizontal);
     display: flex;
     flex-direction: row;
-    gap: 1rem;
+    gap: var(--separator-m);
+    height: 100dvh;
 }
 
 .cards-desc {
@@ -361,6 +361,7 @@ header {
     flex-direction: column;
     max-width: 19.875rem;
     align-items: start;
+    gap: var(--content-spacing);
 }
 
 .cards > a {

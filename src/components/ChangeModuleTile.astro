@@ -16,12 +16,12 @@ const { title, subheading, imageSrc, href } = Astro.props;
     <div class="content">
         <div>
             <div class="tile-subheading">
-                <p class="p-s">{subheading}</p>
+                <p class="p-s unset-margins">{subheading}</p>
             </div>
             
             <div class="desc">
-                <h3 class="tile-header primary">{title}</h3>
-                <p>
+                <h3 class="tile-header primary unset-margins">{title}</h3>
+                <p class="unset-margins">
                     <slot/>
                 </p>
             </div>
@@ -97,7 +97,7 @@ img {
 
 .content {
     display: flex;
-    height: 19.125rem;
+    /* height: 19.125rem; */
     min-width: 18.75rem;
     max-width: 52.75rem;
     min-height: 15.3125rem;
