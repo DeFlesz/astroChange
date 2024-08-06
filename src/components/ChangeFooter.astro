@@ -35,7 +35,15 @@
             <a href="contact"><p>Kontakt</p></a>
             <a href="development_space"><p>Przestrzeń rozwojowa</p></a>
             <a href="faq"><p>FAQ</p></a>
-            
+            <a href="privacy_policy">
+                <p>Polityka prywatności</p>
+            </a>
+            <a href="minors_standards_of_protection">
+                <p>Standardy ochrony małoletnich</p>
+            </a>
+            <a href="edusky">
+                <p>System eduSky</p>
+            </a>
     </div>
         
     <div class="company-data">
@@ -81,6 +89,7 @@ a {
 }
 
 .main {
+    max-width: 100%;
     margin-top: var(--section-spacing); 
     padding: var(--footer-padding-top) var(--padding-horizontal) var(--separator-l) var(--padding-horizontal); 
     border-radius: var(--corner-l) var(--corner-l) 0 0;
@@ -106,6 +115,7 @@ p {
 
 .copyright {
     margin: auto;
+    margin-top: 9.375rem;
 }
 
 h4 {
@@ -113,6 +123,9 @@ h4 {
 }
 
 @media only screen and (max-width: 40rem) {
+    .copyright {
+        margin-top: var(--separator-xl);
+    }
     .mobile-social-buttons {
         display: flex;
         flex-direction: row;

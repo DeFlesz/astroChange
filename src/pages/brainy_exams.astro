@@ -58,6 +58,17 @@ import imageExams from "../images/brainyExams.jpg";
                         </svg>
                     </ChangeInfoTile>
                 </div>
+                <div class="contact-faq-buttons">
+                    <a class="btn elev icon-btn" href="contact?ref=brainy_exams">
+                        Skontaktuj się z nami
+                        <span class="material-symbols-outlined">
+                            phone
+                        </span>
+                    </a>
+                    <a class="btn out" href="faq">
+                        Najczęściej zadawane pytania
+                    </a>
+                </div>
             </div>
     </div>
 </div>
@@ -73,6 +84,12 @@ import imageExams from "../images/brainyExams.jpg";
 </Layout>
 
 <style>
+.contact-faq-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: var(--separator-m);
+}
+
 .header-container {
     margin-top: var(--page-padding-top);
 }

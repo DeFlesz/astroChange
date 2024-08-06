@@ -7,6 +7,7 @@ import ChangeBilboard from "../components/ChangeBilboard.astro"
 
 import developmentSpaceHeaderPhoto from "../images/developmentSpaceHeaderPhoto.jpg";
 import photoCarouselOne from "../images/photoCarouselOne.jpg";
+import ChangeGalleryDev from "../components/ChangeGalleryDev.astro";
 
 
 
@@ -23,11 +24,14 @@ import photoCarouselOne from "../images/photoCarouselOne.jpg";
     </div>
 
     <div class="description fourklock">
-        <h3 class="primary">
+        <h3 class="header2 primary">
             Oddajemy Ci przestrzeń do kreatywnych zmian, bo wspieramy rozwój w każdym wieku.
         </h3>
         <div class="desc-container">
-                <Image class="carousel-photo" src={photoCarouselOne} alt=""/>
+                <!-- <Image class="carousel-photo" src={photoCarouselOne} alt=""/> -->
+                 <ChangeGalleryDev>
+                    
+                </ChangeGalleryDev>
                 <div class="desc-content">
                     <p>
                         Change to przestrzeń domowa, gdzie kreatywność i nauka spotykają się w harmonii. Poza godzinami zajęć oferujemy możliwość wynajęcia sal, gdzie niezależnie od tego, czy organizujesz warsztaty rozwojowe czy spotkania grupowe, znajdziesz idealne warunki do efektywnej współpracy w spokoju i bezpiecznej przestrzeni. Nie musisz się martwić o materiały twórcze — wszystko, co może się przydać już mamy, nawet klocki LEGO!
@@ -37,7 +41,7 @@ import photoCarouselOne from "../images/photoCarouselOne.jpg";
                         title="Wynajem sal" 
                         desc="Zorganizuj w stworzonej przez nas przestrzeni swoje szkolenia, warsztaty rozwojowe lub spotkania terapeutyczne." 
                         buttonText="Skontaktuj się z nami" 
-                        buttonLink="contact" 
+                        buttonLink="contact?ref=room" 
                         buttonIcon="phone"
                     />
 
@@ -45,10 +49,10 @@ import photoCarouselOne from "../images/photoCarouselOne.jpg";
                         title="Szkolenie FRIS®" 
                         desc="Odkryj z nami swój styl myślenia i styl działania podczas sesji rozwojowej prowadzonej przez certyfikowanego trenera Modelu FRIS®." 
                         buttonText="Skontaktuj się z nami" 
-                        buttonLink="contact" 
+                        buttonLink="contact?ref=fris" 
                         buttonIcon="phone"
                         aboutText="Więcej o FRIS®"
-                        aboutLink="#"
+                        aboutLink="#about_fris"
                         aboutIcon="arrow_forward"
                     />
 
@@ -62,9 +66,18 @@ import photoCarouselOne from "../images/photoCarouselOne.jpg";
 </Layout>
 
 <style>
+.gallery-image {
+    width: 100%;
+    height: fit-content;
+}
+
 .header-container {
     margin-top: var(--page-padding-top);
     padding: var(--padding-horizontal);
+}
+
+.header, .header2 {
+    margin-bottom: var(--content-spacing);
 }
 
 .bilboard-container, .description {
@@ -99,7 +112,7 @@ import photoCarouselOne from "../images/photoCarouselOne.jpg";
     align-self: flex-end;
 }
 
-@media only screen and (max-width: 40rem) {
+@media only screen and (max-width: 60rem) {
     .desc-container {
         grid-template-columns: 1fr;
     }

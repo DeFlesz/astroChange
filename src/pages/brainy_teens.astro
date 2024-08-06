@@ -61,6 +61,17 @@ import imageTeens from "../images/brainyTeens.jpg";
                         </svg>
                     </ChangeInfoTile>
                 </div>
+                <div class="contact-faq-buttons">
+                    <a class="btn elev icon-btn" href="contact?ref=brainy_teens">
+                        Skontaktuj się z nami
+                        <span class="material-symbols-outlined">
+                            phone
+                        </span>
+                    </a>
+                    <a class="btn out" href="faq">
+                        Najczęściej zadawane pytania
+                    </a>
+                </div>
             </div>
     </div>
 </div>
@@ -76,6 +87,12 @@ import imageTeens from "../images/brainyTeens.jpg";
 </Layout>
 
 <style>
+.contact-faq-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: var(--separator-m);
+}
+
 .header-container {
     margin-top: var(--page-padding-top);
 }

@@ -1,5 +1,7 @@
 ---
+import Image from "astro/components/Image.astro";
 
+import eduskyImageSrc from "../images/edusky.png"
 ---
 
 <div class="navigation" id="navbar">
@@ -78,6 +80,9 @@
         <a href="contact" class="desktop-button"><p class="p-button">Kontakt</p></a>
         <a href="development_space" class="desktop-button"><p class="p-button">Przestrzeń rozwojowa</p></a>
         <a href="faq" class="desktop-button"><p class="p-button">FAQ</p></a>
+        <a href="#edusky" class="desktop-button">
+            <Image src={eduskyImageSrc} alt="edusky logo" />
+        </a>
         
     </div>
     <div class="mobile-button">
@@ -93,6 +98,8 @@
         <a href="contact"><h5>Kontakt</h5></a>
         <a href="development_space"><h5>Przestrzeń rozwojowa</h5></a>
         <a href="faq"><h5>FAQ</h5></a>
+        <a href="privacy_policy"><h5>Polityka prywatności</h5></a>
+        <a href="#edusky"><h5>System eduSky</h5></a>
     </div>
     <div class="mobile-social-buttons">
         <!-- btn round icon social -->

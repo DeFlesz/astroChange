@@ -25,7 +25,7 @@ const { title, desc, buttonText, buttonLink, buttonIcon, aboutText, aboutLink, a
                 {buttonIcon}
             </span>
         </a>
-        {aboutLink && <a href={aboutLink} class="btn icon-btn">
+        {aboutLink && <a href={aboutLink} class="btn no-border icon-btn">
             {aboutText}
             <span class="material-symbols-outlined">
                 {aboutIcon}
@@ -48,7 +48,9 @@ const { title, desc, buttonText, buttonLink, buttonIcon, aboutText, aboutLink, a
 
 .buttons {
     display: flex;
-    align-items: flex-start;
+    align-items: stretch;
+    /* justify-content: space-evenly; */
+    justify-content: space-between;
     gap: 2rem;
     align-self: stretch;
 }

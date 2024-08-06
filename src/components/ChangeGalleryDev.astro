@@ -1,0 +1,119 @@
+---
+import Image from "astro/components/Image.astro";
+import photoCarouselOne from "../images/photoCarouselOne.jpg"
+import photoCarouselTwo from "../images/photoCarouselTwo.jpg"
+import photoCarouselThree from "../images/photoCarouselThree.jpg"
+import photoCarouselFour from "../images/photoCarouselFour.jpg"
+---
+
+<div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <Image class="gallery-image" src={photoCarouselOne} alt="biuro"/>
+        </div>
+        <div class="swiper-slide">
+            <Image class="gallery-image" src={photoCarouselTwo} alt="biuro"/>
+        </div>
+        <div class="swiper-slide">
+            <Image class="gallery-image" src={photoCarouselThree} alt="biuro"/>
+        </div>
+        <div class="swiper-slide">
+        <Image class="gallery-image" src={photoCarouselFour} alt="biuro"/>
+        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+
+<script>
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/pagination'
+// import 'swiper/css/navigation';
+
+// const swiper = new Swiper(".mySwiper", {
+//   slidesPerView: "auto",
+//   loop: true,
+//   // Navigation arrows
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev"
+//   }
+// });
+
+  var swiper = new Swiper(".mySwiper", {
+    modules: [Navigation, Pagination],
+    direction: 'horizontal',
+    centeredSlides: true,
+//   slidesPerView: 1,
+    grabCursor: true,
+    // freeMode: false,
+    loop: true,
+    mousewheel: false,
+    keyboard: {
+        enabled: true
+    },
+    allowSlidePrev: true,
+    allowSlideNext: true,
+    spaceBetween: 30,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    });
+  </script>
+
+<style>
+    .swiper {
+        margin-top: var(--separator-xl);
+        width: 100%;
+        height: fit-content;
+    }
+
+    .gallery-image {
+        border-radius: var(--corner-m);
+    }
+
+
+    .swiper-pagination {
+        position: relative;
+        margin: auto;
+        padding: 1rem;
+        border-radius: 3rem;
+        background-color: var(--white2);
+        width: fit-content !important;
+        margin-top: 2rem;
+        /* bottom: 4rem !important; */
+    }
+
+
+
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .swiper-pagination-bullet {
+        width: 0.25rem;
+        height: 0.25rem;
+        flex-shrink: 0;
+        border-radius: var(--Numbers-Corners-corner-s, 0.625rem);
+        /* background: var(--text-primary, #535E6B); */
+    }
+
+    .swiper-pagination-bullet:hover {
+        background: var(--text-secondary);
+        color: var(--text-secondary);
+    }
+
+    .swiper-pagination-bullet.swiper-pagination-bullet-active {
+        width: var(--Numbers-Corners-corner-m, 1.5rem) !important !important !important;
+        height: var(--Numbers-Separators-separator-s, 0.5rem);
+        flex-shrink: 0;
+        border-radius: var(--Numbers-Corners-corner-s, 0.625rem);
+        background: var(--Colours-Blue-BLUE-01, #39A2F1);
+    }
+</style>

@@ -18,6 +18,7 @@
     --content-spacing: 2.5rem;
     --page-padding-top: 8.125rem;
     --footer-padding-top: 10rem;
+    --separator-xl: 4rem;
     --separator-l: 2rem;
     --separator-m: 1rem;
     --box-vertical-padding: 2rem;
@@ -177,6 +178,17 @@ p {
     font-weight: 600;
     line-height: normal;
     letter-spacing: 0.016rem;
+}
+
+.btn.no-border, .btn.no-border > span.material-symbols-outlined {
+    border: none;
+    color: var(--primary);
+    fill: var(--primary);
+    background: none;
+}
+
+.elev {
+    box-shadow: 4px 4px 10px 4px rgba(57, 162, 241, 0.25);
 }
 
 /* Classes */
