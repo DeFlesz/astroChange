@@ -68,20 +68,25 @@ import ChangeGalleryDev from "../components/ChangeGalleryDev.astro";
 <style>
 .gallery-image {
     width: 100%;
-    height: fit-content;
 }
 
 .header-container {
-    margin-top: var(--page-padding-top);
-    padding: var(--padding-horizontal);
+    /* margin-top: var(--page-padding-top); */
+    padding: var(--page-padding-top) var(--padding-horizontal) var(--section-spacing) var(--padding-horizontal);
+    display: flex;
+    flex-direction: column;
+    gap: var(--content-spacing);
 }
 
 .header, .header2 {
-    margin-bottom: var(--content-spacing);
+    /* margin-bottom: var(--content-spacing); */
 }
 
 .bilboard-container, .description {
-    padding: var(--padding-horizontal);
+    padding: var(--section-spacing) var(--padding-horizontal) var(--section-spacing) var(--padding-horizontal);
+    display: flex;
+    flex-direction: column;
+    gap: var(--content-spacing);
 }
 
 .header-photo {

@@ -21,13 +21,14 @@
     --separator-xl: 4rem;
     --separator-l: 2rem;
     --separator-m: 1rem;
+    --separator-s: 0.5rem;
     --box-vertical-padding: 2rem;
     --box-horizontal-padding: 2rem;
 
     /* swiper theming */
     --swiper-theme-color: var(--primary);
     --swiper-pagination-color: var(--primary);
-    --swiper-pagination-bullet-inactive-color: var(--text-primary);
+    --swiper-pagination-bullet-inactive-color: var(--black);
 
     /* border radiouses */
     --corner-l: 3rem;
@@ -187,12 +188,20 @@ p {
     background: none;
 }
 
+.btn.no-border:hover, .btn.no-border:hover > span.material-symbols-outlined {
+    border: none;
+    background: none;
+    color: var(--primary-dark);
+    fill: var(--primary-dark);
+}
+
 .elev {
     box-shadow: 4px 4px 10px 4px rgba(57, 162, 241, 0.25);
 }
 
 /* Classes */
 .btn {
+    box-sizing: border-box;
     text-decoration: none;
     display: inline-flex;
     justify-content: center;
@@ -371,3 +380,60 @@ p {
     margin: 0;
     padding: 0;
 }
+
+.swiper-pagination {
+    /* position: relative; */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: var(--corner-s);
+    padding: var(--separator-m);
+    background: var(--white2);
+    height: 2.5rem;
+    width: max-content;
+    border-radius: var(--corner-l);
+    /* float: right; */
+}
+
+/* .swiper-pagination {
+    padding: 1rem;
+    border-radius: 3rem;
+    background-color: var(--white2);
+    width: fit-content !important;
+    margin-top: 2rem;
+    bottom: 4rem !important;
+} 
+*/
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    display: inline-block;
+    border-radius: var(--corner-s);
+    background-color: var(--primary);
+    width: var(--corner-m);
+    height: var(--separator-s);
+}
+
+.swiper-pagination-bullet {
+    transition: all 0.25s linear;
+    display: inline-block;
+    border-radius: var(--corner-s);
+    background-color: var(--text-primary);
+    width: 0.25rem;
+    height: 0.25rem;
+}
+
+.swiper-pagination-bullet:not(.swiper-pagination-bullet-active):hover {
+    display: inline-block;
+    border-radius: var(--corner-s);
+    background-color: var(--text-primary);
+    width: var(--separator-s);
+    height: var(--separator-s);
+}
+
+.swiper-button-next, .swiper-button-prev {
+    display: inline-block;
+    cursor: pointer;
+}
+

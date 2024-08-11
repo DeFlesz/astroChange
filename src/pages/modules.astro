@@ -27,11 +27,9 @@ import Layout from "../layouts/Layout.astro";
 
 <style>
 .intro {
-    padding: var(--padding-horizontal);
-    margin-top: var(--page-padding-top);
+    padding: var(--page-padding-top) var(--padding-horizontal) var(--section-spacing) var(--padding-horizontal);
     display: flex;
     flex-direction: column;
-    padding: var(--padding-horizontal);
     gap: var(--section-spacing);
     padding-bottom: 3.75rem;
 }
@@ -51,11 +49,11 @@ import Layout from "../layouts/Layout.astro";
     gap: var(--section-spacing);
 }
 .modules {
-    padding: var(--padding-horizontal);
+    padding: var(--section-spacing) var(--padding-horizontal) var(--section-spacing) var(--padding-horizontal);
 }
 
 .parents-corner {
-    padding: var(--padding-horizontal);
+    padding: var(--section-spacing) var(--padding-horizontal) var(--section-spacing) var(--padding-horizontal);
 }
     
 @media only screen and (max-width: 40rem) {
