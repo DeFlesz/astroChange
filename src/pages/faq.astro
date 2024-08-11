@@ -28,14 +28,70 @@ import Layout from "../layouts/Layout.astro";
             </span>
             </a> 
         </div>
-        <div>
-            <ChangeFAQAltElement question="Czy trzeba dodatkowo zapłacić za podręczniki?" answer="tba" id="1"/>
-            <ChangeFAQAltElement question="Czy dzieci mogą się czegoś napić podczas zajęć?" answer="tak (tba)" id="2"/>
-            <ChangeFAQAltElement question="Czy dzieci muszą zmieniać obuwie?" answer="nie (tba)" id="3"/>
-            <ChangeFAQAltElement question="Czy pod szkołą jest parking?" answer="tba" id="4"/>
-            <ChangeFAQAltElement question="Czy rodzic może zostać w budynku podczas zajęć?" answer="tba" id="5"/>
-            <ChangeFAQAltElement question="Czy można uzyskać zaświadczenie o tym, że dziecko uczęszcza na zajęcia?" answer="tba" id="6"/>
-            <ChangeFAQAltElement question="Czy przyjmujemy płatność gotówką?" answer="tba" id="7"/>
+        <div class="faq-elements">
+            <ChangeFAQAltElement 
+                question="Czy trzeba dodatkowo zapłacić za podręczniki?" 
+            >
+                W grupach dziecięcych nie korzystamy z podręczników (dzieci dostają firmowy zeszyt w formacie A4, w którym prowadzą historię swojej nauki). <br><br> W grupach przygotowujących się do egzaminów uczniowie płacą za podręcznik z zadaniami gramatyczno-leksykalnymi.
+            </ChangeFAQAltElement>
+            <ChangeFAQAltElement 
+                question="Czy dzieci mogą się czegoś napić podczas zajęć?" 
+            >
+                Tak, mogą korzystać z wody w kuchni lub napić się z własnego bidonu.
+            </ChangeFAQAltElement>
+            <ChangeFAQAltElement 
+                question="Czy dzieci muszą zmieniać obuwie?" 
+                >
+                Pozostawiamy to do ich decyzji. Natomiast prosimy słuchaczy o zdjęcie butów jedynie kiedy przechodzą do zajęć relaksacyjnych na dywanie.
+            </ChangeFAQAltElement>
+            <ChangeFAQAltElement 
+                question="Czy pod szkołą jest parking?" 
+                >
+                Nie posiadamy własnego parkingu. Nasza akademia znajduje się w bliźniaku przy bocznej ulicy, gdzie można znaleźć kilka wolnych miejsc, natomiast prosimy o wzięcie pod uwagę tego że mamy sąsiadów.
+            </ChangeFAQAltElement>
+            <ChangeFAQAltElement 
+                question="Czy rodzic może zostać w budynku podczas zajęć?" 
+                >
+                Gdybyśmy mogli, zaprosilibyśmy was wszystkich Państwa na kawę, ale ze względu na ograniczone warunki przestrzenne, pozwalamy na to tylko w wyjątkowych wypadkach. Akademia jest zlokalizowana blisko galerii handlowej, obiektów sportowych, sklepu spożywczego, kawiarni oraz terenów spacerowych. Zachęcamy do owocnego zagospodarowania swojego czasu.
+            </ChangeFAQAltElement>
+            <ChangeFAQAltElement 
+                question="Czy można uzyskać zaświadczenie o tym, że dziecko uczęszcza na zajęcia?" 
+                >
+                Jak najbardziej - wydajemy zaświadczenia na prośbę rodzica.
+            </ChangeFAQAltElement>
+            <ChangeFAQAltElement 
+                question="Czy przyjmujemy płatność gotówką?" 
+                >
+                Nie, wszystkie wpłaty dokonywane są na konto Change. Wpłaty wprowadzane są do elektronicznego systemu zarządzania szkołą językową EDUSKY.
+                <!-- <br>
+                <br>
+                <a class="btn out icon-btn" href="faq">
+                    Dowiedz się więcej
+                    <span class="material-symbols-outlined">
+                        arrow_forward
+                    </span>
+                </a> -->
+            </ChangeFAQAltElement>
+            <ChangeFAQAltElement 
+                question="Czy dzieci muszą mieć piórnik?" 
+                >
+                Nie ma takiej potrzeby. Najważniejszy jest długopis - resztę materiałów piśmiennych zapewniamy na miejscu. Niemniej mamy w zapasie kilka przyrządów do pisania dla zapominalskich.
+            </ChangeFAQAltElement>
+            <ChangeFAQAltElement 
+                question="Czy w grupach sa dzieci, między którymi jest różnica wiekowa?" 
+                >
+                Bardzo rzadko zdarza się, że może być różnica około jednego roku.
+            </ChangeFAQAltElement>
+            <ChangeFAQAltElement 
+                question="Czy Change organizuje półkolonie?" 
+                >
+                Niestety nie, to wymaga wielu przygotowań, a wszystkie lektorki na co dzień mają jeszcze drugą pracę.
+            </ChangeFAQAltElement>
+            <ChangeFAQAltElement 
+                question="Kiedy trzeba zapisać dziecko i czy jest opłata wpisowa?" 
+                >
+                Zapisy na rok następny ruszają od maja i trwają do września. Nie ma opłaty wpisowej.
+            </ChangeFAQAltElement>
         </div>
     </div>
 </Layout>
@@ -51,6 +107,23 @@ import Layout from "../layouts/Layout.astro";
     padding: var(--padding-horizontal);
     gap: 7.938rem;
 }
+
+.faq-elements {
+    max-height: 90dvh;
+    overflow-y: scroll;
+    
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.faq-elements::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.faq-elements {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+} 
 
 @media only screen and (max-width: 40rem) {
     .faq-container {

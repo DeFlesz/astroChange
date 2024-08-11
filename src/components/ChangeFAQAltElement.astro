@@ -1,17 +1,14 @@
 ---
 interface Props {
     question: string,
-    answer: string,
-    id: string
 }
 
-const { question, answer } = Astro.props;
+const { question } = Astro.props;
 
 ---
 
 <faq-element>
     <div class="main">
-
         <div class="question">
             <div class="header">
                 <p>
@@ -24,7 +21,7 @@ const { question, answer } = Astro.props;
         </div>
         <div class="answer">
             <p>
-                {answer}
+                <slot/>
             </p>
         </div>
     </div>
@@ -37,9 +34,11 @@ const { question, answer } = Astro.props;
   
         // Read the message from the data attribute.
         const answer = this.querySelector(".answer");
-        const button = this.querySelector('.question');
+        const question = this.querySelector(".question");
+        const button = this.querySelector('.main');
         button?.addEventListener('click', () => {
-            answer?.classList.toggle("show")
+            answer?.classList.toggle("show");
+            question?.classList.toggle("show");
             console.log("lolz");
         });
       }
@@ -48,15 +47,22 @@ const { question, answer } = Astro.props;
     customElements.define('faq-element', ChangeFAQElement);
   </script>
   <style>
+    /* button {
+        transform: translateX(calc(-1*var(--box-horizontal-padding)));
+    } */
+
     .main {
-        transition: all 0.5s linear;
+        transition: all 0.5s;
         padding: var(--box-vertical-padding) var(--box-horizontal-padding);
     }
     
-    .question:hover span {
-        background-color: var(--primary);
-        color: var(--white3);
+    .main:hover .question p {
+        color: var(--primary);
     }
+
+    /* .question {
+        transition: all 0.5s linear;
+    } */
     
     .header {
         user-select: none;
@@ -75,11 +81,31 @@ const { question, answer } = Astro.props;
     }
     
     .answer {
-        display: none;
+        transition: all 0.5s;
+        color: transparent;
+        /* display: none; */
+        padding: 0 var(--box-horizontal-padding);
+        height: 0;
+        overflow: hidden;
+    }
+
+    .question, span {
+        transition: all 0.5s;
     }
     
     .answer.show {
-        display: block;
+        /* display: block; */
+        padding: var(--box-vertical-padding) var(--box-horizontal-padding);
+        height: fit-content;
+    }
+
+    .question.show p {
+        /* margin-top: 0; */
+        color: var(--primary);
+    }
+
+    .question.show span {
+        transform: rotateZ(180deg);
     }
     
     .question input[type="checkbox"]:checked {
