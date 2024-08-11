@@ -123,18 +123,21 @@ import eduskyImageSrc from "../images/edusky.png"
 
 <script>
     const button = document.querySelector(".mobile-button")
-    const navButtons = document.querySelector(".mobile-nav-buttons")
+      const navbar = document.getElementById("navbar")
+      const navButtons = document.querySelector(".mobile-nav-buttons")
+    let expanded = false;
     button?.addEventListener("click", () => {
         console.log("lol");
         const value = navButtons?.classList.toggle("expanded")
+        expanded = !expanded
         button.classList.toggle("change")
+        // navbar.style.top = "0";
     })
 
     let prevScrollpos = window.scrollY;
     window.onscroll = function() {
       let currentScrollPos = window.scrollY;
-      const navbar = document.getElementById("navbar")
-      if (!navbar || !window.matchMedia("(max-width: 40rem)").matches) {
+      if (!navbar || !window.matchMedia("(max-width: 40rem)").matches || expanded) {
         return;
       }
       if (prevScrollpos > currentScrollPos) {
@@ -311,9 +314,10 @@ svg.polygon > path {
 }
 
 .navigation {
+    box-sizing: border-box;
     transform: translateY(-3.75rem);
     animation: show 1s ease forwards;
-    /* padding: 0 var(--padding-horizontal); */
+    padding: 0 var(--padding-horizontal);
     animation-delay: 0.5s;
     z-index: 1000;
     margin: 0;
@@ -326,7 +330,7 @@ svg.polygon > path {
     right: 0;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     /* overflow: hidden; */
 }
@@ -378,13 +382,18 @@ svg.polygon > path {
         transform: translate(0, -7px) rotate(45deg);
     }
 
+    .mobile-nav-buttons h5 {
+        margin: 0;
+        padding: 0;
+    }
+
     .mobile-nav-buttons {
+        box-sizing: border-box;
         display: flex;
         flex-direction: column;
         align-items: center;
         position: fixed;
         transition: all 1s;
-        gap: 1rem;
         align-self: stretch; 
         color: var(--text-primary);
         /* width: 100%; */
@@ -395,6 +404,7 @@ svg.polygon > path {
         right: -200dvw;
         /* top: 4.375rem; */
         bottom: 0;
+        gap: var(--separator-xl);
         /* margin: auto; */
     }
 
@@ -416,7 +426,7 @@ svg.polygon > path {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
+        gap: var(--separator-l);
         align-self: stretch;
     }
 

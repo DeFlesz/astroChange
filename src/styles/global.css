@@ -273,7 +273,8 @@ p {
 
 .icon.social:hover {
     background-color: var(--primary);
-    border: none;
+    border-color: var(--primary);
+    /* border: none; */
 }
 
 .icon.social:hover > span.material-symbols-outlined {
