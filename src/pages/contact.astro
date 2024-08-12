@@ -11,48 +11,75 @@ import Layout from "../layouts/Layout.astro";
         <div class="form">
             <div class="form-one">
 
-                <p>
+                <p class="black">
                     Zaznacz wybrany temat (opcjonalnie).
                 </p>
                 <div class="checkboxes">
-                    <div class="checkbox-container">
+                    <div class="container">
                         <input type="checkbox" id="brainyKids" name="brainyKids" value="Brainy Kids">
                         <label for="brainyKids"> Brainy Kids</label>
+                        <span class="checkmark">
+                            <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.71875 4.46875L3.90625 6.65625L8.28125 1.96875" stroke="#39A2F1" stroke-width="1.5" stroke-linecap="square"/>
+                              </svg>
+                        </span>
                     </div>
                     
-                    <div class="checkbox-container">
-                        <input class="checkbox-input" type="checkbox" id="brainyTeens" name="brainyTeens" value="Brainy Teens">
+                    <div class="container">
+                        <input type="checkbox" id="brainyTeens" name="brainyTeens" value="Brainy Teens">
                         <label for="brainyTeens"> Brainy Teens</label>
-                        <span class="checkmark"></span>
+                        <span class="checkmark">
+                            <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.71875 4.46875L3.90625 6.65625L8.28125 1.96875" stroke="#39A2F1" stroke-width="1.5" stroke-linecap="square"/>
+                              </svg>
+                        </span>
                     </div>
                     
-                    <div class="checkbox-container">
+                    <div class="container">
                         <input class="checkbox-input" type="checkbox" id="brainyExams" name="brainyExams" value="Brainy Exams">
                         <label for="brainyExams"> Brainy Exams</label>
-                        <span class="checkmark"></span>
+                        <span class="checkmark">
+                            <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.71875 4.46875L3.90625 6.65625L8.28125 1.96875" stroke="#39A2F1" stroke-width="1.5" stroke-linecap="square"/>
+                              </svg>
+                        </span>
                     </div>
                     
-                    <div class="checkbox-container">
+                    <div class="container">
                         <input class="checkbox-input" type="checkbox" id="fris" name="fris" value="FRIS">
                         <label for="fris"> FRIS</label>
-                        <span class="checkmark"></span>
+                        <span class="checkmark">
+                            <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.71875 4.46875L3.90625 6.65625L8.28125 1.96875" stroke="#39A2F1" stroke-width="1.5" stroke-linecap="square"/>
+                              </svg>
+                        </span>
                     </div>
                     
-                    <div class="checkbox-container">
+                    <div class="container">
                         <input class="checkbox-input" type="checkbox" id="wynajemSal" name="wynajemSal" value="Wynajem sal">
                         <label for="wynajemSal"> Wynajme sal</label>
+                        <span class="checkmark">
+                            <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.71875 4.46875L3.90625 6.65625L8.28125 1.96875" stroke="#39A2F1" stroke-width="1.5" stroke-linecap="square"/>
+                              </svg>
+                        </span>
                     </div>
                     
-                    <div class="checkbox-container">
+                    <div class="container">
                         <input class="checkbox-input" type="checkbox" id="other" name="other" value="Chcę porozmawiać o czymś innym">
                         <label for="other"> Chcę porozmawiać o czymś innym</label>
+                        <span class="checkmark">
+                            <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.71875 4.46875L3.90625 6.65625L8.28125 1.96875" stroke="#39A2F1" stroke-width="1.5" stroke-linecap="square"/>
+                              </svg>
+                        </span>
                     </div>
                 </div>
             </div>
 
             <div class="form-two">
 
-                <p>
+                <p class="black">
                     Wypełnij swoje dane i uzupełnij treść wiadomości lub pozostaw ją pustą.
                 </p>
                 <div class="textfields">
@@ -62,7 +89,7 @@ import Layout from "../layouts/Layout.astro";
                     <input class="textfield" type="text" name="message-content" id="message-content" placeholder="Treść wiadomości..." maxlength="500">
                 </div>
                 
-                <p class="p-s">
+                <p class="p-s black">
                     * – pola obowiązkowe
                 </p>
             </div>
@@ -127,7 +154,39 @@ import Layout from "../layouts/Layout.astro";
 
 </Layout>
 
+<script>
+const container = document.querySelectorAll(".container"); 
+container.forEach(e => {
+    const input = e.querySelector("input");
+        if (input.checked) {
+            e.style.backgroundColor = "var(--primary)";
+            // console.log(e);
+        } else {
+            e.style.backgroundColor = "var(--white2)";
+        }
+})
+
+container.forEach((e) => {
+    const input = e.querySelector("input");
+    e.addEventListener("click", () => {
+        input?.click();
+    })
+    input?.addEventListener("click", () => {
+        if (input.checked) {
+            e.style.backgroundColor = "var(--primary)";
+            // console.log(e);
+        } else {
+            e.style.backgroundColor = "var(--white2)";
+        }
+    });
+})
+</script>
+
 <style>
+.black {
+    color: var(--black);
+}
+
 p {
     margin: 0;
     padding: 0;
@@ -152,54 +211,21 @@ p {
     gap: 0.5rem;
 }
 
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #eee;
-}
-
-/* When the checkbox is checked, add a blue background */
-.checkbox-container input:checked ~ .checkmark {
-  background-color: #2196F3;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the checkmark/indicator */
-.checkbox-container .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-.checkbox-input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-.checkbox-container {
+/* Customize the label (the container) */
+.container {
+    /* transition: all 0.25s linear; */
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: var(--button-icon-size);
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     padding: 1rem;
     width: fit-content;
     color: var(--black);
@@ -211,7 +237,93 @@ p {
     font-weight: 400;
     line-height: 140%; /* 1.12rem */
     border-radius: 62.5rem;
-}
+    }
+
+    /* Hide the browser's default checkbox */
+    .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    }
+
+    /* Create a custom checkbox */
+    .checkmark {
+    /* position: bl; */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    height: 1rem;
+    width: 1rem;
+    background-color: transparent;
+    border: var(--black) solid 1px;
+    border-radius: 4px;
+    }
+
+    .checkmark svg {
+        /* fill: transparent; */
+        /* fill: none; */
+        display: none;
+    }
+
+    .container input:checked ~ .checkmark svg {
+        /* fill: var(--primary); */
+        display: inline;
+    }
+
+    /* On mouse-over, add a grey background color */
+    /* .container:hover input ~ .checkmark {
+    background-color: #FFAAAA;
+    } */
+
+    .container:hover label {
+        color: var(--text-primary);
+    }
+
+    /* When the checkbox is checked, add a blue background */
+    .container input:checked ~ .checkmark {
+        background-color: var(--white1);
+        border: none;
+    }
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+        content: "";
+        /* position: absolute; */
+        display: none;
+    }
+
+    /* Show the checkmark when checked */
+    .container input:checked ~ .checkmark:after {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Style the checkmark/indicator */
+    .container .checkmark:after {
+        /* width: 5px;
+        height: 10px;
+        align-self: center;
+        border: solid var(--primary);
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg); */
+    }
+
+    .container label {
+        color: var(--black);
+        cursor: pointer;
+    }
+
+    .container input:checked ~ label {
+        color: var(--white1);
+    }
 
 .checkbox-agreement {
     margin-top: 2rem;

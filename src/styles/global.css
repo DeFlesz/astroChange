@@ -24,6 +24,7 @@
     --separator-s: 0.5rem;
     --box-vertical-padding: 2rem;
     --box-horizontal-padding: 2rem;
+    --button-icon-size: 0.75rem;
 
     /* swiper theming */
     --swiper-theme-color: var(--primary);
