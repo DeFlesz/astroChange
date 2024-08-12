@@ -143,7 +143,7 @@ import imageExams from "../images/brainyExams.jpg";
     padding: var(--section-spacing) var(--padding-horizontal) var(--section-spacing) var(--padding-horizontal);
 }
 
-@media only screen and (max-width: 40rem) {
+@media only screen and (max-width: 60rem) {
     .header-content {
         grid-template-columns: 1fr;
         gap: 1.875rem;
@@ -152,6 +152,11 @@ import imageExams from "../images/brainyExams.jpg";
 
     .desc-tiles, .desc-container {
         grid-template-columns: 1fr;
+    }
+
+    .contact-faq-buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 }
 </style>
