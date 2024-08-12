@@ -155,10 +155,12 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <script>
-const container = document.querySelectorAll(".container"); 
+
+const container = Array.from(document.querySelectorAll(".container") as unknown as HTMLCollectionOf<HTMLElement>); 
+
 container.forEach(e => {
     const input = e.querySelector("input");
-        if (input.checked) {
+        if (input?.checked) {
             e.style.backgroundColor = "var(--primary)";
             // console.log(e);
         } else {
