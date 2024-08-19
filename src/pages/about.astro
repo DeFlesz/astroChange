@@ -93,7 +93,7 @@ import stuffPhoto from "../images/webp/aboutStuffPhoto.webp"
     display: flex;
     margin-top: 2.5rem;
     flex-direction: row;
-    gap: 2rem;
+    gap: var(--separator-m);
 }
 
 .bilboard-container {
@@ -110,6 +110,11 @@ import stuffPhoto from "../images/webp/aboutStuffPhoto.webp"
     .stuff-buttons {
         display: grid;
         grid-template-columns: 1fr 1fr;
+    }
+
+    .stuff-buttons > a {
+        font-size: 0.7rem;
+
     }
 
     .header {

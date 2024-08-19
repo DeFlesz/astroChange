@@ -145,7 +145,7 @@ h5 {
     line-height: 120%; /* 1.641rem */
 }
 
-p {
+p, .p {
     /* Font styles/p */
     font-family: Manrope;
     font-size: 1rem;
@@ -225,7 +225,7 @@ p {
 }
 
 .icon-btn {
-    gap: 0.5rem;
+    gap: var(--separator-s);
     justify-content: space-between;
 }
 
