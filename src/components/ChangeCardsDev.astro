@@ -36,7 +36,7 @@ import empathyImage from "../images/empathy.png";
         <ChangeCard imageSrc={empathyImage} title="Empatia" subheading="empathy [ˈem.pə.θi]">
             Kreatywność jest kluczową kompetencją XXI wieku i stanowi podstawę naszego podejścia do nauczania. Lektorzy tworzą spersonalizowane scenariusze łącząc naukę języka z kreatywnymi zadaniami, jak planowanie miasta, pobudzając kreatywność uczniów. Są mentorami, uczącymi języka, inspirującymi do osiągania celów i eksplorowania nowych obszarów wiedzy.
         </ChangeCard>
-        <!-- <div class="swiper-slide desktop-display"></div> -->
+        <div class="swiper-slide desktop-display"></div>
     </div>
     <div class="pagination-and-navigation">
         <div class="swiper-pagination card-pagination"></div>
@@ -81,8 +81,7 @@ import 'swiper/css';
   var swiper = new Swiper(".cardsSwiper", {
     modules: [Navigation, Pagination],
     direction: 'horizontal',
-    slidesPerView: 1,
-    loop: true,
+//   slidesPerView: 1,
     // mousewheel: true,
     // freeMode: true,
     allowSlidePrev: true,
@@ -93,6 +92,18 @@ import 'swiper/css';
     //     enabled:true,
     //     releaseOnEdges: true,
     // },
+    breakpoints: {
+        640: {
+            slidesPerView: 2,
+            direction: "vertical",
+            mousewheel: {
+            // releaseOnEdges: true,
+                enabled:true,
+                releaseOnEdges: true,
+            },
+            freeMode: true,
+        }
+    },
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -107,20 +118,19 @@ import 'swiper/css';
 <style>
     .swiper {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         flex-wrap: nowrap;
         width: 100%;
         height: 100%;
         gap: var(--separator-m);
     }
 
-    .swiper-wrapper {
-        height: calc(100% - 3.75rem);
-    }
-
     .pagination-and-navigation {
+        /* transform: translateY(-500px); */
+        height: 50%;
+        z-index: 10;
         display: flex;
-        flex-direction: row;
+        flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
         gap: var(--separator-m);
@@ -128,39 +138,42 @@ import 'swiper/css';
 
     .swiper-pagination {
         /* transform: rotateZ(90deg); */
-        flex-direction: row;
-        width: max-content;
-        height: 2.5rem;
+        flex-direction: column;
+        height: max-content;
+        width: 2.5rem;
     }
 
-    /* .card-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    .card-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
         display: inline-block;
         border-radius: var(--corner-s);
         background-color: var(--primary);
         width: var(--separator-s) !important;
         height: var(--corner-m) !important;
-    } */
-
+    }
 
     .navigation-buttons {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         gap: var(--separator-s);
     }
-/* 
+
+    .navigation-buttons > * {
+        transform: rotateZ(90deg);
+    }
+
     .swiper-slide {
+        /* height: 100%; */
         height: fit-content;
         text-align: center;
         font-size: 18px;
     }
-    */
-/* 
+
     .swiper-slide img {
         display: block;
         width: 100%;
         height: 100%;
         object-fit: cover;
-    } */
+    }
 
     .swiper-slide.swiper-slide-next {
         /* width: 50%; */

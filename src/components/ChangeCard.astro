@@ -21,22 +21,27 @@ const { imageSrc, title, subheading } = Astro.props;
 
 <style>
 .card {
-    /* margin: 2rem; */
+    box-sizing: border-box;
     background: var(--white3);
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 1.5rem;
-    width: 90%;
+    /* width: 90%; */
     align-self: center;
     transition: all 0.5s;
     opacity: 0.6;
     overflow: hidden;
+    padding: var(--box-vertical-padding) var(--box-horizontal-padding);
+    /* height: 50%; */
+    /* overflow: auto; */
 }
 
 
 .text {
-    margin-right: var(--separator-l);
+    flex-grow: 1;
+    /* flex-shrink: 0; */
+    margin-left: var(--separator-l);
 }
 
 h3 {
@@ -47,6 +52,7 @@ h3 {
 p {
     color: var(--text-secondary);
     margin: 0;
+
 }
 
 .content {
@@ -56,8 +62,12 @@ p {
 
 img {
     height: 80%;
-    width: max-content;
-    margin: var(--separator-l);
+    /* width: max-content; */
+    /* margin: var(--separator-l); */
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    flex-grow: 0;
+    flex-shrink: 1;
 }
 
 .card.swiper-slide-active {
@@ -80,11 +90,16 @@ img {
     }
     .text {
         margin-left: 0;
-        margin: 1.5rem;
+        /* margin: 1.5rem; */
+    }
+    p {
+    font-size: 0.875rem;
+
     }
     img {
-        display: block;
-        max-height: 40dvh;
+        display: inline-block;
+        /* max-height: 50%; */
+        max-height: 25vh;
         width: fit-content;
     }
 }

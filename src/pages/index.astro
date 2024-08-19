@@ -11,6 +11,7 @@ import ChangeCards from "../components/ChangeCards.astro";
 import imageAnimation from "../images/animation-placeholder.jpg";
 import { Image } from "astro:assets";
 import ChangeTestimonialItem from "../components/ChangeTestimonialItem.astro";
+import ChangeCardsDev from "../components/ChangeCardsDev.astro";
 
 
 const imageSrc = "url(/animation-placeholder.jpg)"
@@ -45,13 +46,13 @@ const imageSrc = "url(/animation-placeholder.jpg)"
                 Tutaj słuchacze czują się wyjątkowi ucząc się angielskiego w domowej atmosferze, łącząc naukę języka z technikami oddychania i uważności. To miejsce, w którym program nauczania dostosowuje się do dziecka, a nie dziecko do programu. Uczymy bez podręczników, skupiając się na praktycznych umiejętnościach i naturalnym rozwoju. Spotykamy się raz w tygodniu, co pozwala na harmonijny rozwój bez przeciążania. Założona 20 lat temu z myślą o naszych własnych dzieciach, akademia nieustannie rozwija swoją wizję, aby zapewnić indywidualne podejście do każdego ucznia i wspierać jego językowy oraz społeczny rozwój. Tutaj towarzyszymy w nauce i dmuchamy w skrzydła.
             </p>
             <div class="intro-buttons">
-                <a class="btn elev icon-btn">
+                <a href="modules" class="btn elev icon-btn">
                     Poznaj nasze zajęcia
                 <span class="material-symbols-outlined">
                     arrow_forward
                 </span>
                 </a>
-                <a class="btn out icon-btn">
+                <a href="contact" class="btn out icon-btn">
                     Skontaktuj się z nami
                 <span class="material-symbols-outlined">
                     phone
@@ -61,10 +62,10 @@ const imageSrc = "url(/animation-placeholder.jpg)"
         </div>
     </div>
 
-    <div class="cards fourklock">
+    <div class="cards fourklock snap">
         <div class="cards-desc">
             <h4 class="unset-margins">Wartości którymi się kierujemy:</h4>
-            <a class="btn elev icon-btn">
+            <a href="modules" class="btn elev icon-btn">
                 Poznaj nas
             <span class="material-symbols-outlined">
                 arrow_forward
@@ -72,7 +73,8 @@ const imageSrc = "url(/animation-placeholder.jpg)"
             </a>
         </div>
         <ChangeCards/>
-        <a class="btn icon-btn">
+         <!-- <ChangeCardsDev/> -->
+        <a href="modules" class="btn icon-btn">
             Poznaj nasze zajęcia
         <span class="material-symbols-outlined">
             arrow_forward
@@ -145,6 +147,19 @@ const imageSrc = "url(/animation-placeholder.jpg)"
 </script> -->
 
 <style define:vars={{imageSrc}}>
+/* html {
+    scroll-snap-type: y mandatory;
+} */
+
+html {
+    scroll-snap-type: proximity;
+}
+
+.snap {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
 .intro {
     display: flex;
     flex-direction: column;
@@ -204,7 +219,7 @@ const imageSrc = "url(/animation-placeholder.jpg)"
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100dvh;
+    height: 100vh;
     width: 100dvw;
 }
 
@@ -256,7 +271,7 @@ const imageSrc = "url(/animation-placeholder.jpg)"
     animation-delay: 0.5s;
     /* width: pare; */
     width: 100dvw;
-    height: 100dvh;
+    height: 100vh;
     
     object-fit: cover;
 }
@@ -270,7 +285,7 @@ const imageSrc = "url(/animation-placeholder.jpg)"
     
     border-radius: 0;
     width: 100dvw;
-    height: 100dvh;
+    height: 100vh;
     display: flex;
     animation: scroll-more-animation 1s linear forwards;
     animation-delay: 0.5s;
@@ -353,11 +368,14 @@ header {
 
 .cards {
     margin: auto;
+    margin-top: var(--content-spacing);
+    margin-bottom: var(--content-spacing);
     padding: var(--section-spacing) var(--padding-horizontal) var(--section-spacing) var(--padding-horizontal);
     display: flex;
     flex-direction: row;
     gap: var(--separator-m);
-    height: 100dvh;
+    height: 50dvh;
+    /* height: fit-content; */
 }
 
 .cards-desc {
@@ -370,7 +388,8 @@ header {
 
 .cards > a {
     display: none;
-    margin-top: 1.875rem;
+
+    /* margin-top: 1.875rem; */
     align-items: center;
     justify-content: center;
 }
@@ -384,6 +403,7 @@ header {
 @media only screen and (max-width: 40rem) {
     .cards {
         flex-direction: column;
+        height: 90vh;
     }
     .cards-desc {
         align-items: stretch;

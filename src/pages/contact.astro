@@ -16,7 +16,7 @@ import Layout from "../layouts/Layout.astro";
                 </p>
                 <div class="checkboxes">
                     <div class="container">
-                        <input type="checkbox" id="brainyKids" name="brainyKids" value="Brainy Kids">
+                        <input class="topic-checkbox" type="checkbox" id="brainyKids" name="brainyKids" value="Brainy Kids">
                         <label for="brainyKids"> Brainy Kids</label>
                         <span class="checkmark">
                             <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -26,7 +26,7 @@ import Layout from "../layouts/Layout.astro";
                     </div>
                     
                     <div class="container">
-                        <input type="checkbox" id="brainyTeens" name="brainyTeens" value="Brainy Teens">
+                        <input class="topic-checkbox" type="checkbox" id="brainyTeens" name="brainyTeens" value="Brainy Teens">
                         <label for="brainyTeens"> Brainy Teens</label>
                         <span class="checkmark">
                             <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -36,7 +36,7 @@ import Layout from "../layouts/Layout.astro";
                     </div>
                     
                     <div class="container">
-                        <input class="checkbox-input" type="checkbox" id="brainyExams" name="brainyExams" value="Brainy Exams">
+                        <input class="topic-checkbox" type="checkbox" id="brainyExams" name="brainyExams" value="Brainy Exams">
                         <label for="brainyExams"> Brainy Exams</label>
                         <span class="checkmark">
                             <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,7 +46,7 @@ import Layout from "../layouts/Layout.astro";
                     </div>
                     
                     <div class="container">
-                        <input class="checkbox-input" type="checkbox" id="fris" name="fris" value="FRIS">
+                        <input class="topic-checkbox" type="checkbox" id="fris" name="fris" value="FRIS">
                         <label for="fris"> FRIS</label>
                         <span class="checkmark">
                             <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -56,7 +56,7 @@ import Layout from "../layouts/Layout.astro";
                     </div>
                     
                     <div class="container">
-                        <input class="checkbox-input" type="checkbox" id="wynajemSal" name="wynajemSal" value="Wynajem sal">
+                        <input class="topic-checkbox" type="checkbox" id="wynajemSal" name="wynajemSal" value="Wynajem sal">
                         <label for="wynajemSal"> Wynajme sal</label>
                         <span class="checkmark">
                             <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -66,7 +66,7 @@ import Layout from "../layouts/Layout.astro";
                     </div>
                     
                     <div class="container">
-                        <input class="checkbox-input" type="checkbox" id="other" name="other" value="Chcę porozmawiać o czymś innym">
+                        <input class="topic-checkbox" type="checkbox" id="other" name="other" value="Chcę porozmawiać o czymś innym">
                         <label for="other"> Chcę porozmawiać o czymś innym</label>
                         <span class="checkmark">
                             <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -100,12 +100,12 @@ import Layout from "../layouts/Layout.astro";
                     <input class="checkbox-agreement-input" type="checkbox" id="agreement" name="agreement" value="agreement">
                     <label for="agreement" class="p-s"> Zapoznałem/am się oraz akceptuję regulamin i politykę prywatności i wyrażam zgodę na kontakt.</label> <br>
                 </div>
-                <a class="btn icon-btn">
+                <button id="mailto-button" class="btn icon-btn">
                     Poznaj nasze zajęcia
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M11.6371 5.39619L0.901036 0.0634378C0.792927 0.00974382 0.672606 -0.0104789 0.554045 0.00511802C0.435483 0.0207149 0.323545 0.0714916 0.23123 0.151552C0.138915 0.231611 0.0700102 0.33767 0.0325166 0.457411C-0.00497696 0.577152 -0.00952076 0.705664 0.019413 0.828022L0.784833 4.06034L5.68428 5.99946L0.784833 7.93858L0.019413 11.1709C-0.0100652 11.2933 -0.00590059 11.4221 0.0314196 11.5422C0.0687397 11.6622 0.137672 11.7685 0.230154 11.8488C0.322636 11.929 0.434842 11.9797 0.553649 11.9951C0.672455 12.0104 0.792949 11.9898 0.901036 11.9355L11.6371 6.60273C11.7456 6.5489 11.8374 6.46358 11.9016 6.35675C11.9659 6.24993 12 6.126 12 5.99946C12 5.87292 11.9659 5.74899 11.9016 5.64217C11.8374 5.53534 11.7456 5.45002 11.6371 5.39619Z" fill="#EBECF2"/>
                     </svg>
-                </a>
+                </button>
             </div>
         </div>
         <div class="map-container">
@@ -155,6 +155,8 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <script>
+import { any } from "astro/zod";
+
 
 const container = Array.from(document.querySelectorAll(".container") as unknown as HTMLCollectionOf<HTMLElement>); 
 
@@ -182,6 +184,22 @@ container.forEach((e) => {
         }
     });
 })
+
+// function sendMail() {
+//     const checkboxes = document.querySelectorAll(".topic-checkbox")
+//     console.log(checkboxes);
+//     checkboxes.forEach((e) => {
+//         if (e.checked) {
+//             // e.
+//         }
+//     })
+    
+//     const agreement = document.querySelector(".checkbox-agreement-input")
+// }
+
+// const mailtoButton = document.querySelector("#mailto-button")
+
+// mailtoButton?.addEventListener("click", sendMail);
 </script>
 
 <style>
