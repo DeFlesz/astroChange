@@ -10,7 +10,7 @@ import ChangeGalleryDev from "../components/ChangeGalleryDev.astro";
 
 ---
 <Layout title="Development space">
-    <div class="header-container fourklock">
+    <!-- <div class="header-container fourklock">
         <h1 class="header unset-margins primary desktop-display">
             Nasze zajęcia są efektem przemyśleń, poszukiwań i eksperymentów. 
         </h1>
@@ -18,7 +18,7 @@ import ChangeGalleryDev from "../components/ChangeGalleryDev.astro";
             Nasze zajęcia są efektem przemyśleń, poszukiwań i eksperymentów. 
         </h3>
         <Image class="header-photo" src={developmentSpaceHeaderPhoto} alt="Sala lekcyjna" />
-    </div>
+    </div> -->
 
     <div class="description fourklock">
         <h3 class="header2 primary">
@@ -80,7 +80,9 @@ import ChangeGalleryDev from "../components/ChangeGalleryDev.astro";
 }
 
 .bilboard-container, .description {
-    padding: var(--section-spacing) var(--padding-horizontal) var(--section-spacing) var(--padding-horizontal);
+    /* padding: var(--section-spacing) var(--padding-horizontal) var(--section-spacing) var(--padding-horizontal); */
+    padding: var(--page-padding-top) var(--padding-horizontal) var(--section-spacing) var(--padding-horizontal);
+
     display: flex;
     flex-direction: column;
     gap: var(--content-spacing);
