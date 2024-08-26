@@ -5,14 +5,15 @@ interface Props {
     title: string,
     subheading: string,
     imageSrc: ImageMetadata,
+    alt: string,
     href: string,
 }
 
-const { title, subheading, imageSrc, href } = Astro.props;
+const { title, subheading, imageSrc, alt, href } = Astro.props;
 
 ---
 <a class="card" href={href}>
-    <Image src={imageSrc} alt="placeholder"/>
+    <Image src={imageSrc} alt={alt}/>
     <div class="content">
         <div>
             <div class="tile-subheading">
@@ -43,6 +44,7 @@ a {
 }
 
 .btn-highlight {
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;

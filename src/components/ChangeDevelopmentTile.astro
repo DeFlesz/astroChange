@@ -18,6 +18,9 @@ const { title, desc, buttonText, buttonLink, buttonIcon, aboutText, aboutLink, a
         <h3 class="title">{title}</h3>
         <p class="desc">{desc}</p>
     </div>
+
+    {!aboutLink ? 
+    
     <div class="buttons">
         <a href={buttonLink} class="btn icon-btn">
             {buttonText} 
@@ -25,13 +28,23 @@ const { title, desc, buttonText, buttonLink, buttonIcon, aboutText, aboutLink, a
                 {buttonIcon}
             </span>
         </a>
-        {aboutLink && <a href={aboutLink} class="btn no-border icon-btn">
+    </div>
+        :
+    <div class="buttons-grid">
+        <a href={buttonLink} class="btn icon-btn">
+            {buttonText} 
+            <span class="material-symbols-outlined">
+                {buttonIcon}
+            </span>
+        </a>
+        <a href={aboutLink} class="btn out icon-btn">
             {aboutText}
             <span class="material-symbols-outlined">
                 {aboutIcon}
             </span>    
-        </a>}
+        </a>
     </div>
+    }
 </div>
 
 <style>
@@ -46,13 +59,23 @@ const { title, desc, buttonText, buttonLink, buttonIcon, aboutText, aboutLink, a
     background: var(--white3);
 }
 
+.buttons-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--separator-l);
+}
+
 .buttons {
-    display: flex;
     align-items: stretch;
     /* justify-content: space-evenly; */
     justify-content: space-between;
     gap: 2rem;
     align-self: stretch;
+}
+
+a {
+    justify-content: center;
 }
 
 a:last-child {

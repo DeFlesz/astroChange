@@ -19,11 +19,12 @@ import imageExams from "../images/webp/brainyExams.webp";
         <h3 class="header unset-margins primary mobile-display">
             Brainy Exams 
         </h3>
-        <h3 class="desktop-display">
-            W tym module oswajamy uczniów ze strategiami egzaminacyjnymi, na bieżąco dostosowując materiały do ich potrzeb, dbając o to, aby mieli miarę postępu w przygotowaniach.         </h3>
-        <h5 class="mobile-display">
-            W tym module oswajamy uczniów ze strategiami egzaminacyjnymi, na bieżąco dostosowując materiały do ich potrzeb, dbając o to, aby mieli miarę postępu w przygotowaniach.         </h5>
-    </div>
+        <!-- <h3 class="desktop-display">
+            W tym module oswajamy uczniów ze strategiami egzaminacyjnymi, na bieżąco dostosowując materiały do ich potrzeb, dbając o to, aby mieli miarę postępu w przygotowaniach.         </h3> -->
+        <!-- <h5 class="mobile-display"> -->
+            <h5>
+                W tym module oswajamy uczniów ze strategiami egzaminacyjnymi, na bieżąco dostosowując materiały do ich potrzeb, dbając o to, aby mieli miarę postępu w przygotowaniach.
+            </div>
     <Image class="header-photo" src={brainyExamsHeaderSource} alt="" />
 </div>
 
@@ -37,8 +38,7 @@ import imageExams from "../images/webp/brainyExams.webp";
                 <div>
 
                     <p>
-                        Pracujemy na arkuszach egzaminacyjnych od samego początku kursu, aby znaleźć deficyty w zakresie samego języka oraz typów zadań egzaminacyjnych, które sprawiają trudności uczniom. W kameralnych grupach ćwiczymy wszystkie umiejętności egzaminacyjne oraz dajemy wskazówki dotyczące egzaminacyjnych trików. Naszym priorytetem jest, aby uczniowie wiedzieli, na jakim są etapie, stopniowo uzupełniając sprawności językowe wymagane na egzaminie, budując tym samym ich poczucie bezpieczeństwa.
-                        W ramach kursu przewidujemy powstanie grup skupiających się na przygotowaniach do:
+                        Nasze kursy przygotowują uczestników do egzaminu ósmoklasisty, egzaminu maturalnego i/lub zdobycia międzynarodowych certyfikatów językowych, takich jak FCE (First Certificate in English) i CAE (Certificate in Advanced English). Od samego początku kursu pracujemy na arkuszach egzaminacyjnych, aby znaleźć luki w zakresie samego języka i oswoić uczniów ze strategiami egzaminacyjnymi. Naszym priorytetem jest, aby uczniowie wiedzieli, na jakim są etapie, stopniowo uzupełniając sprawności językowe wymagane na egzaminie, budując tym samym swoje poczucie bezpieczeństwa. Dużą wagę przykładamy do pracy z emocjami i zarządzania nimi podczas egzaminu, ponieważ takie podejście do kursu wzmacnia pewność siebie i odporność psychiczną naszych uczniów, co przekłada się na ich sukces egzaminacyjny. Nasi nauczyciele to doświadczeni egzaminatorzy, co oznacza, że uczestnicy kursów otrzymują cenne wskazówki i przygotowanie od ekspertów, którzy znają tajniki egzaminów językowych.
                         <ul class="p">
                             <li>egzaminu ósmoklasisty</li>
                             <li>egzaminu maturalnego</li>
@@ -116,6 +116,7 @@ import imageExams from "../images/webp/brainyExams.webp";
     border-radius: 1.5rem;
     width: 100%;
     height: 85%;
+    /* height: 100%; */
     object-fit: cover;
     align-self: flex-end;
 }
@@ -127,7 +128,8 @@ import imageExams from "../images/webp/brainyExams.webp";
 
 .header-photo {
     width: 100%;
-    height: 50dvh;
+    height: 65dvh;
+    /* height: max-content; */
     object-fit: cover;
     object-position: 50% 50%;
     border-radius: 3rem;

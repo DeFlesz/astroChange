@@ -10,6 +10,9 @@ import photoCarouselFive from "../images/webp/photoCarouselFive.webp"
 <div class="swiper mySwiper">
     <div class="swiper-wrapper">
         <div class="swiper-slide">
+            <Image class="gallery-image" src={photoCarouselFive} alt="biuro"/>
+        </div>
+        <div class="swiper-slide">
             <Image class="gallery-image" src={photoCarouselOne} alt="biuro"/>
         </div>
         <div class="swiper-slide">
@@ -19,10 +22,7 @@ import photoCarouselFive from "../images/webp/photoCarouselFive.webp"
             <Image class="gallery-image" src={photoCarouselThree} alt="biuro"/>
         </div>
         <div class="swiper-slide">
-        <Image class="gallery-image" src={photoCarouselFour} alt="biuro"/>
-        </div>
-        <div class="swiper-slide">
-            <Image class="gallery-image" src={photoCarouselFive} alt="biuro"/>
+            <Image class="gallery-image" src={photoCarouselFour} alt="biuro"/>
         </div>
     </div>
     <div class="pagination-and-navigation">
@@ -116,7 +116,7 @@ import 'swiper/css';
         margin-top: var(--separator-m);
         display: flex;
         flex-direction: row;
-        justify-content: end;
+        justify-content: center;
         align-items: center;
         gap: var(--separator-m);
     }

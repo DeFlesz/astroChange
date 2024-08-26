@@ -98,7 +98,7 @@ style {
 
 h1 {
     font-family: Manrope;
-    font-size: var(--Numbers-Fonts-h1, 3.815rem);
+    font-size: var(--Numbers-Fonts-h1, 3.500rem);
     font-style: normal;
     font-weight: 500;
     line-height: 120%; /* 4.578rem */
@@ -291,6 +291,11 @@ p, .p {
     color: var(--white1);
 }
 
+.btn.icon.social:hover svg > path{
+    fill: var(--white1);
+    color: var(--white1);
+}
+
 .icon.nav {
     background-color: var(--white3);
 }
@@ -345,8 +350,10 @@ p, .p {
 
 }
 
-.btn.out:hover {
+.btn.out:hover, .btn.out:hover > span {
     background-color: var(--primary);
+    color: var(--white3);
+    fill: var(--white3);
 }
 
 .btn.ele {

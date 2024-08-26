@@ -10,15 +10,15 @@ import ChangeGalleryDev from "../components/ChangeGalleryDev.astro";
 
 ---
 <Layout title="Development space">
-    <!-- <div class="header-container fourklock">
+    <div class="header-container fourklock">
         <h1 class="header unset-margins primary desktop-display">
-            Nasze zajęcia są efektem przemyśleń, poszukiwań i eksperymentów. 
+            Tworzona przez wiele lat, w domowym zaciszu przestrzeń rozwojowa dla każdego.        
         </h1>
         <h3 class="header unset-margins primary mobile-display">
-            Nasze zajęcia są efektem przemyśleń, poszukiwań i eksperymentów. 
+            Tworzona przez wiele lat, w domowym zaciszu przestrzeń rozwojowa dla każdego.        
         </h3>
         <Image class="header-photo" src={developmentSpaceHeaderPhoto} alt="Sala lekcyjna" />
-    </div> -->
+    </div>
 
     <div class="description fourklock">
         <h3 class="header2 primary">
@@ -79,9 +79,13 @@ import ChangeGalleryDev from "../components/ChangeGalleryDev.astro";
     /* margin-bottom: var(--content-spacing); */
 }
 
+.header2 {
+    width: 75%;
+}
+
 .bilboard-container, .description {
-    /* padding: var(--section-spacing) var(--padding-horizontal) var(--section-spacing) var(--padding-horizontal); */
-    padding: var(--page-padding-top) var(--padding-horizontal) var(--section-spacing) var(--padding-horizontal);
+    padding: var(--section-spacing) var(--padding-horizontal) var(--section-spacing) var(--padding-horizontal);
+    /* padding: var(--page-padding-top) var(--padding-horizontal) var(--section-spacing) var(--padding-horizontal); */
 
     display: flex;
     flex-direction: column;
@@ -119,6 +123,10 @@ import ChangeGalleryDev from "../components/ChangeGalleryDev.astro";
 @media only screen and (max-width: 60rem) {
     .desc-container {
         grid-template-columns: 1fr;
+    }
+
+    .header2 {
+        width: 100%;
     }
 }
 </style>
