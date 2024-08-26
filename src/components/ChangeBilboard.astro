@@ -7,7 +7,7 @@ import iphone2Image from "../images/webp/iphoneStock2.webp"
 <div class="bilboard">
     <div class="bilboard-content">
         <h2 class="bilboard-header primary">
-            Zobacz jak się uczymy
+            Zobacz, jak się uczymy
         </h2>
         <div class="bilboard-buttons">
             <div class="bilboard-icon-buttons">
@@ -25,9 +25,9 @@ import iphone2Image from "../images/webp/iphoneStock2.webp"
             </div>
             <a href="faq" class="btn icon-btn out">
                 Często zadawane pytania
-                <span class="material-symbols-outlined">
-                    arrow_forward
-                </span>
+                <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.13125 7.55684L4.93125 11.7568L6 12.8068L12 6.80684L6 0.806839L4.93125 1.85684L9.13125 6.05684H0V7.55684H9.13125Z" fill="#EBECF2"/>
+                </svg>
             </a>
         </div>
     </div>
@@ -80,9 +80,14 @@ import iphone2Image from "../images/webp/iphoneStock2.webp"
     /* width: calc(100% - 2*var(--padding-horizontal)); */
     grid-template-columns: 1fr 1fr;
     padding: 2rem 2rem 0rem 2rem;
+    background-image: url("/shapez.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
 }
 
 .bilboard-phones {
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
     justify-items: center;
@@ -92,7 +97,8 @@ import iphone2Image from "../images/webp/iphoneStock2.webp"
     padding: 0;
     margin: 0;
     padding-top: 2.5rem;
-
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 img {
@@ -111,10 +117,11 @@ img {
         grid-template-columns: 1fr 1fr;
     }
 
-@media only screen and (max-width: 40rem) {
+@media only screen and (max-width: 60rem) {
     .bilboard {
         grid-template-columns: 1fr;
         gap: 1.875rem;
+        background-position: bottom;
     }
 
     .bilboard-content {
@@ -124,6 +131,11 @@ img {
     .bilboard-buttons {
         justify-content: center;
         align-items: center;
+    }
+
+    .bilboard-phones {
+        padding-left: 0;
+        padding-right: 0;
     }
 
     h2 {

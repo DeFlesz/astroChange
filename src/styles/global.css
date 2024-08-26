@@ -237,6 +237,10 @@ p, .p {
     font-size: 1rem;   
 }
 
+.icon-btn > svg > path {
+    fill: var(--white1);
+}
+
 .icon > span.material-symbols-outlined {
     /* fill: white; */
     margin: 0;
@@ -260,6 +264,14 @@ p, .p {
 
 .out.icon-btn > span.material-symbols-outlined {
     color: var(--text-primary);
+}
+
+.out.icon-btn > svg > path {
+    fill: var(--text-primary);
+}
+
+.out.icon-btn:hover > svg > path {
+    fill: var(--white2);
 }
 
 .round {
@@ -291,7 +303,7 @@ p, .p {
     color: var(--white1);
 }
 
-.btn.icon.social:hover svg > path{
+.btn.icon.social:hover > svg > path{
     fill: var(--white1);
     color: var(--white1);
 }
@@ -443,5 +455,22 @@ p, .p {
 .swiper-button-next, .swiper-button-prev {
     display: inline-block;
     cursor: pointer;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    box-sizing: border-box;
+    background-color: var(--white2);
+    border-radius: 100%;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    background-color: var(--primary);
+}
+
+
+.swiper-button-next:hover > svg > path, .swiper-button-prev:hover > svg > path {
+    fill: var(--white2);
 }
 

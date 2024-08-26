@@ -29,7 +29,7 @@ import imageExams from "../images/webp/brainyExams.webp";
 </div>
 
 <div class="description fourklock">
-    <h3 class="primary">
+    <h3 class="primary subheader">
         Moduł stworzony specjalnie z myślą o młodzieży, której celem jest zdanie egzaminu.
     </h3>
     <div class="desc-container">
@@ -39,11 +39,11 @@ import imageExams from "../images/webp/brainyExams.webp";
 
                     <p>
                         Nasze kursy przygotowują uczestników do egzaminu ósmoklasisty, egzaminu maturalnego i/lub zdobycia międzynarodowych certyfikatów językowych, takich jak FCE (First Certificate in English) i CAE (Certificate in Advanced English). Od samego początku kursu pracujemy na arkuszach egzaminacyjnych, aby znaleźć luki w zakresie samego języka i oswoić uczniów ze strategiami egzaminacyjnymi. Naszym priorytetem jest, aby uczniowie wiedzieli, na jakim są etapie, stopniowo uzupełniając sprawności językowe wymagane na egzaminie, budując tym samym swoje poczucie bezpieczeństwa. Dużą wagę przykładamy do pracy z emocjami i zarządzania nimi podczas egzaminu, ponieważ takie podejście do kursu wzmacnia pewność siebie i odporność psychiczną naszych uczniów, co przekłada się na ich sukces egzaminacyjny. Nasi nauczyciele to doświadczeni egzaminatorzy, co oznacza, że uczestnicy kursów otrzymują cenne wskazówki i przygotowanie od ekspertów, którzy znają tajniki egzaminów językowych.
-                        <ul class="p">
+                        <!-- <ul class="p">
                             <li>egzaminu ósmoklasisty</li>
                             <li>egzaminu maturalnego</li>
                             <li>międzynarodowych certyfikatów językowych (FCE i CAE)</li>
-                        </ul>
+                        </ul> -->
                     </p>
                 </div>
                     
@@ -73,9 +73,9 @@ import imageExams from "../images/webp/brainyExams.webp";
                 <div class="contact-faq-buttons">
                     <a class="btn elev icon-btn" href="contact?ref=brainy_exams">
                         Skontaktuj się z nami
-                        <span class="material-symbols-outlined">
-                            phone
-                        </span>
+                        <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.41333 6.00017C3.37333 7.88684 4.92 9.42684 6.80667 10.3935L8.27333 8.92684C8.45333 8.74684 8.72 8.68684 8.95333 8.76684C9.7 9.01351 10.5067 9.14684 11.3333 9.14684C11.7 9.14684 12 9.44684 12 9.81351V12.1402C12 12.5068 11.7 12.8068 11.3333 12.8068C5.07333 12.8068 0 7.73351 0 1.47351C0 1.10684 0.3 0.806839 0.666667 0.806839H3C3.36667 0.806839 3.66667 1.10684 3.66667 1.47351C3.66667 2.30684 3.8 3.10684 4.04667 3.85351C4.12 4.08684 4.06667 4.34684 3.88 4.53351L2.41333 6.00017Z"/>
+                          </svg>
                     </a>
                     <a class="btn out" href="faq">
                         Najczęściej zadawane pytania
@@ -96,6 +96,10 @@ import imageExams from "../images/webp/brainyExams.webp";
 </Layout>
 
 <style>
+.subheader {
+    width: 75%;
+}
+
 .contact-faq-buttons {
     display: flex;
     flex-direction: row;
@@ -176,6 +180,10 @@ ul {
     .contact-faq-buttons {
         display: grid;
         grid-template-columns: 1fr 1fr;
+    }
+
+    .subheader {
+        width: 100%;
     }
 }
 </style>

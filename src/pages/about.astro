@@ -32,15 +32,15 @@ import stuffPhoto from "../images/webp/aboutStuffPhoto.webp"
 
                     <a href="modules" class="btn elev icon-btn">
                         Poznaj nasze zajęcia
-                        <span class="material-symbols-outlined">
-                            arrow_forward
-                        </span>
+                        <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.13125 7.55684L4.93125 11.7568L6 12.8068L12 6.80684L6 0.806839L4.93125 1.85684L9.13125 6.05684H0V7.55684H9.13125Z" fill="#EBECF2"/>
+                        </svg>
                     </a>
                     <a href="contact" class="btn icon-btn out">
                         Skontaktuj się z nami
-                        <span class="material-symbols-outlined">
-                            phone
-                        </span>
+                        <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.41333 6.00017C3.37333 7.88684 4.92 9.42684 6.80667 10.3935L8.27333 8.92684C8.45333 8.74684 8.72 8.68684 8.95333 8.76684C9.7 9.01351 10.5067 9.14684 11.3333 9.14684C11.7 9.14684 12 9.44684 12 9.81351V12.1402C12 12.5068 11.7 12.8068 11.3333 12.8068C5.07333 12.8068 0 7.73351 0 1.47351C0 1.10684 0.3 0.806839 0.666667 0.806839H3C3.36667 0.806839 3.66667 1.10684 3.66667 1.47351C3.66667 2.30684 3.8 3.10684 4.04667 3.85351C4.12 4.08684 4.06667 4.34684 3.88 4.53351L2.41333 6.00017Z"/>
+                          </svg>
                     </a>
                 </div>
             </div>
@@ -82,6 +82,10 @@ import stuffPhoto from "../images/webp/aboutStuffPhoto.webp"
     /* width: ?; */
 }
 
+.stuff-header {
+    width: 75%;
+}
+
 .stuff-container {
     margin-top: 2.5rem;
     display: grid;
@@ -119,6 +123,10 @@ import stuffPhoto from "../images/webp/aboutStuffPhoto.webp"
 
     .header {
         margin-bottom: 1.875rem;
+    }
+
+    .stuff-header {
+        width: 100%;
     }
 }
 </style>

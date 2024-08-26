@@ -98,13 +98,18 @@ import Layout from "../layouts/Layout.astro";
 
                 <div class="checkbox-agreement">
                     <input class="checkbox-agreement-input" type="checkbox" id="agreement" name="agreement" value="agreement">
+                    <span class="checkmark">
+                        <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.71875 4.46875L3.90625 6.65625L8.28125 1.96875" stroke="#F2F4FA" stroke-width="1.5" stroke-linecap="square"/>
+                          </svg>
+                    </span>
                     <label class="p"for="agreement"> Zapoznałem/am się oraz akceptuję <a href="privacy_policy">regulamin i politykę prywatności</a> i wyrażam zgodę na kontakt.</label> <br>
                 </div>
                 <button id="mailto-button" class="btn icon-btn">
                     Wyślij wiadomość
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.6371 5.39619L0.901036 0.0634378C0.792927 0.00974382 0.672606 -0.0104789 0.554045 0.00511802C0.435483 0.0207149 0.323545 0.0714916 0.23123 0.151552C0.138915 0.231611 0.0700102 0.33767 0.0325166 0.457411C-0.00497696 0.577152 -0.00952076 0.705664 0.019413 0.828022L0.784833 4.06034L5.68428 5.99946L0.784833 7.93858L0.019413 11.1709C-0.0100652 11.2933 -0.00590059 11.4221 0.0314196 11.5422C0.0687397 11.6622 0.137672 11.7685 0.230154 11.8488C0.322636 11.929 0.434842 11.9797 0.553649 11.9951C0.672455 12.0104 0.792949 11.9898 0.901036 11.9355L11.6371 6.60273C11.7456 6.5489 11.8374 6.46358 11.9016 6.35675C11.9659 6.24993 12 6.126 12 5.99946C12 5.87292 11.9659 5.74899 11.9016 5.64217C11.8374 5.53534 11.7456 5.45002 11.6371 5.39619Z" fill="#EBECF2"/>
-                    </svg>
+                    <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.6371 6.20303L0.901036 0.870277C0.792927 0.816583 0.672606 0.79636 0.554045 0.811957C0.435483 0.827554 0.323545 0.878331 0.23123 0.958391C0.138915 1.03845 0.0700102 1.14451 0.0325166 1.26425C-0.00497696 1.38399 -0.00952076 1.5125 0.019413 1.63486L0.784833 4.86718L5.68428 6.8063L0.784833 8.74542L0.019413 11.9777C-0.0100652 12.1002 -0.00590059 12.229 0.0314196 12.349C0.0687397 12.469 0.137672 12.5754 0.230154 12.6556C0.322636 12.7358 0.434842 12.7865 0.553649 12.8019C0.672455 12.8173 0.792949 12.7966 0.901036 12.7423L11.6371 7.40957C11.7456 7.35574 11.8374 7.27042 11.9016 7.16359C11.9659 7.05677 12 6.93284 12 6.8063C12 6.67976 11.9659 6.55583 11.9016 6.44901C11.8374 6.34218 11.7456 6.25686 11.6371 6.20303Z" fill="#EBECF2"/>
+                      </svg>
                 </button>
             </div>
         </div>
@@ -156,7 +161,12 @@ import Layout from "../layouts/Layout.astro";
 
 <script>
 // import { any } from "astro/zod";
+const checkboxAgreement = document.querySelector(".checkbox-agreement")
+const checkboxAgreementInput = checkboxAgreement?.querySelector("input");
 
+checkboxAgreement?.addEventListener("click", () => {
+    checkboxAgreementInput?.click();
+})
 
 const container = Array.from(document.querySelectorAll(".container") as unknown as HTMLCollectionOf<HTMLElement>); 
 
@@ -268,7 +278,7 @@ p {
     }
 
     /* Hide the browser's default checkbox */
-    .container input {
+    .container input, .checkbox-agreement input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -278,18 +288,19 @@ p {
 
     /* Create a custom checkbox */
     .checkmark {
-    /* position: bl; */
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 0;
-    left: 0;
-    height: 1rem;
-    width: 1rem;
-    background-color: transparent;
-    border: var(--black) solid 1px;
-    border-radius: 4px;
+        /* position: bl; */
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        height: 1rem;
+        min-width: 1rem;
+        background-color: transparent;
+        border: var(--text-primary) solid 1px;
+        border-radius: 4px;
+        margin: 0.0125rem;
     }
 
     .checkmark svg {
@@ -298,9 +309,11 @@ p {
         display: none;
     }
 
-    .container input:checked ~ .checkmark svg {
+    .container input:checked ~ .checkmark svg,
+    .checkbox-agreement input:checked ~ .checkmark svg {
         /* fill: var(--primary); */
         display: inline;
+        position: absolute;
     }
 
     /* On mouse-over, add a grey background color */
@@ -315,6 +328,13 @@ p {
     /* When the checkbox is checked, add a blue background */
     .container input:checked ~ .checkmark {
         background-color: var(--white1);
+        border: none;
+    }
+
+    .checkbox-agreement input:checked ~ .checkmark {
+        /* fill: var(--primary); */
+        background-color: var(--primary);
+        /* border-color: var(--primary); */
         border: none;
     }
 
@@ -354,8 +374,13 @@ p {
     }
 
 .checkbox-agreement {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: flex-start;
     margin-top: 2rem;
     margin-bottom: 1rem;
+    gap: var(--corner-s);
 }
 
 .textfields {
@@ -436,6 +461,10 @@ iframe {
 @media only screen and (max-width: 40rem) {
     .form-container {
         grid-template-columns: 1fr;
+    }
+
+    .map {
+        height: 50dvh;
     }
 }
 </style>

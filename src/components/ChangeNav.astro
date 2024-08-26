@@ -23,9 +23,9 @@ import eduskyImageSrc from "../images/edusky.png"
         <div class="modules-dropdown">
             <a class="modules" href="modules">
                 <p class="p-button">Moduły&ThinSpace;
-                    <svg class="polygon" width="7" height="8" viewBox="0 0 7 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5.90104e-07 4L6.75 0.102887L6.75 7.89712L5.90104e-07 4Z" fill="#FAFBFF"/>
-                    </svg>
+                    <svg class="polygon" width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.5 7.30684L0.602887 0.556838L8.39711 0.556839L4.5 7.30684Z" fill="#FAFBFF"/>
+                      </svg>
                 </p>
             </a>
             <div class="dropdown-content">
@@ -39,9 +39,9 @@ import eduskyImageSrc from "../images/edusky.png"
                         </p>
                     </div>
                     <div class="tile-button">
-                        <span class="material-symbols-outlined">
-                            arrow_forward
-                        </span>
+                        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 10.6995L1.04864e-07 8.3005L14.3939 8.30051L7.79672 1.70328L9.5 0L19 9.5L9.5 19L7.79672 17.2967L14.3939 10.6995L0 10.6995Z" fill="#535E6B"/>
+                          </svg>
                     </div>
                 </a>
                 <a href="brainy_teens" class="dropdown-tile">
@@ -54,9 +54,9 @@ import eduskyImageSrc from "../images/edusky.png"
                         </p>
                     </div>
                     <div class="tile-button">
-                        <span class="material-symbols-outlined">
-                            arrow_forward
-                        </span>
+                        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 10.6995L1.04864e-07 8.3005L14.3939 8.30051L7.79672 1.70328L9.5 0L19 9.5L9.5 19L7.79672 17.2967L14.3939 10.6995L0 10.6995Z" fill="#535E6B"/>
+                          </svg>
                     </div>
                 </a>
                 <a href="brainy_exams" class="dropdown-tile">
@@ -69,9 +69,9 @@ import eduskyImageSrc from "../images/edusky.png"
                         </p>
                     </div>
                     <div class="tile-button">
-                        <span class="material-symbols-outlined">
-                            arrow_forward
-                        </span>
+                        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 10.6995L1.04864e-07 8.3005L14.3939 8.30051L7.79672 1.70328L9.5 0L19 9.5L9.5 19L7.79672 17.2967L14.3939 10.6995L0 10.6995Z" fill="#535E6B"/>
+                          </svg>
                     </div>
                 </a>
             </div>
@@ -268,6 +268,10 @@ a.desktop-button {
     color: transparent;
 }
 
+.dropdown-tile:hover svg path {
+    fill: var(--white2);
+}
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -307,8 +311,12 @@ svg.polygon > path {
     fill: var(--text-primary);
 }
 
-.modules-dropdown:hover svg.polygon {
+svg.polygon {
     transform: rotate(-90deg);
+}
+
+.modules-dropdown:hover svg.polygon {
+    transform: rotate(0deg);
 }
 
 .modules-dropdown:hover svg.polygon > path {
@@ -400,6 +408,7 @@ svg.polygon > path {
         background-color: var(--text-primary);
         margin: 0.31rem 0;
         transition: 0.4s;
+        box-sizing: border-box;
     }
     
     .change .bar1 {
