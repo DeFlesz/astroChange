@@ -216,7 +216,7 @@ html {
 .intro-buttons {
     display: flex;
     flex-direction: row;
-    gap: 1rem;
+    gap: var(--separator-m);
 }
 
 .icon-holder {
@@ -410,6 +410,17 @@ header {
     }
 }
 @media only screen and (max-width: 40rem) {
+    .intro-buttons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .intro-buttons a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .cards {
         flex-direction: column;
         height: 90vh;

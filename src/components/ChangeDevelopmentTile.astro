@@ -96,7 +96,24 @@ a {
     justify-content: center;
 }
 
-a:last-child {
+/* a:last-child {
     align-self: end
+} */
+
+@media only screen and (max-width: 40rem) {
+    .buttons-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--separator-m);
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: stretch;
+    }
 }
+
 </style>

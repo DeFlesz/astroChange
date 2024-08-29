@@ -52,6 +52,10 @@ const { question } = Astro.props;
     /* button {
         transform: translateX(calc(-1*var(--box-horizontal-padding)));
     } */
+    p {
+        margin: 0;
+        padding: 0;
+    }
 
     .main {
         transition: all 0.5s;
@@ -110,7 +114,7 @@ const { question } = Astro.props;
     
     .answer.show {
         /* display: block; */
-        padding: var(--box-vertical-padding) var(--box-horizontal-padding);
+        padding: var(--box-vertical-padding) var(--box-horizontal-padding) 0 var(--box-horizontal-padding);
         height: fit-content;
     }
 
