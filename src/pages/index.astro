@@ -64,7 +64,7 @@ const imageSrc = "url(/animation-placeholder.jpg)"
     <div class="cards fourklock snap">
         <div class="cards-desc">
             <h4 class="unset-margins">Wartości którymi się kierujemy:</h4>
-            <a href="/modules" class="btn elev icon-btn">
+            <a href="/modules" class="btn elev icon-btn" id="desktop-cards-button">
                 Poznaj nas
                 <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M9.13125 7.55684L4.93125 11.7568L6 12.8068L12 6.80684L6 0.806839L4.93125 1.85684L9.13125 6.05684H0V7.55684H9.13125Z" fill="#EBECF2"/>
@@ -160,6 +160,13 @@ const imageSrc = "url(/animation-placeholder.jpg)"
 /* html {
     scroll-snap-type: y mandatory;
 } */
+
+#desktop-cards-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+}
 
 html {
     scroll-snap-type: proximity;

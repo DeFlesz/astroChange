@@ -168,8 +168,13 @@ import imageKids from "../images/webp/brainyKids.webp";
     }
 
     .contact-faq-buttons {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact-faq-buttons a {
+        align-items: center;
+        justify-content: center;
     }
 
     .subheader {
